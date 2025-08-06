@@ -7,4 +7,5 @@ The marketing page for our platform
   - Model context protocol (MCP)
   - TailwindCSS
   - Framer Motion
+  - GSAP (GreenSock Animation Platform)
   - TypeScript
