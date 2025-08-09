@@ -5,6 +5,7 @@ import DesktopNavBar from './components/shared/DesktopNavBar';
 import MobileNavBar from './components/shared/MobileNavBar';
 import DeskTopFooter from './components/shared/DeskTopFooter';
 import MobileFooter from './components/shared/MobileFooter';
+import PersonalHeader from './components/PersonalHeader';
 
 export default function Home() {
 	const { isMobile } = useWindowSize();
@@ -12,7 +13,7 @@ export default function Home() {
 	return (
 		<>
 			{isMobile ? <MobileNavBar /> : <DesktopNavBar />}
-
+			<PersonalHeader />
 			{isMobile ? <MobileFooter /> : <DeskTopFooter />}
 		</>
 	);

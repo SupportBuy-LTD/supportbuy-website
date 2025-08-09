@@ -23,9 +23,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' suppressHydrationWarning>
-			<body
-				className={`${InterSans.className} antialiased relative overflow-hidden`}
-			>
+			<body className={`${InterSans.className} antialiased relative `}>
 				<ThemeProvider attribute='class' enableSystem defaultTheme='system'>
 					<Providers>{children}</Providers>
 				</ThemeProvider>
