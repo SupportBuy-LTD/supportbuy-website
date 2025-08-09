@@ -1,26 +1,36 @@
-@import "tailwindcss";
-
+@import 'tailwindcss';
+@plugin '../hero.ts';
+/* Note: You may need to change the path to fit your project structure */
+@source '.././node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	--sb-primary: #144419;
+	--sb-secondary: #cdf546;
+	--sb-secondary-300: #ebffd7;
+	--sb-dark: #333333;
+	--sb-white-one: #f5f5f5;
+	--sb-white-two: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+	--color-sb-primary: var(--sb-primary);
+	--color-sb-secondary: var(--sb-secondary);
+	--color-sb-secondary-300: var(--sb-secondary-300);
+	--color-sb-dark: var(--sb-dark);
+	--color-sb-white-one: var(--sb-white-one);
+	--color-sb-white-two: var(--sb-white-two);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+	:root {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+	}
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+/* body {
+	background: var(--background);
+	color: var(--foreground);
+	font-family: Arial, Helvetica, sans-serif;
+} */
