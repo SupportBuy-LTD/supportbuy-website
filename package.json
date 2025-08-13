@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@heroui/react": "^2.8.2",
     "@tabler/icons-react": "^3.34.1",
     "framer-motion": "^12.23.12",
