@@ -8,20 +8,22 @@ function DesktopNavBar() {
 	const pathname = usePathname();
 
 	return (
-		<nav className='h-20 px-20 bg-sb-white flex justify-between items-center w-full shadow-[0px_1px_4px_0px_#0C0C0D0D]'>
+		<nav className='h-20 md:px-10 lg:px-20 bg-sb-white-two flex justify-between items-center w-full shadow-[0px_1px_4px_0px_#0C0C0D0D]'>
 			<div className='flex space-x-2'>
 				<ButtonLink
 					href='.'
-					className={`flex text-base  font-bold justify-center items-center  h-10 px-3 py-[8px] rounded-[48px] ${
-						pathname === '/' ? 'bg-sb-secondary-300' : ''
+					className={`flex text-base text-sb-dark-one  font-bold justify-center items-center  h-10 px-3 py-[8px] rounded-[48px] ${
+						pathname === '/' ? 'bg-sb-secondary-300 text-sb-primary' : ''
 					}`}
 				>
 					Personal
 				</ButtonLink>
 				<ButtonLink
 					href='/business'
-					className={`flex text-base  font-bold justify-center items-center  h-10 px-3 py-[8px] rounded-[48px] ${
-						pathname === '/business' ? 'bg-sb-secondary-300' : ''
+					className={`flex text-base text-sb-dark-one  font-bold justify-center items-center  h-10 px-3 py-[8px] rounded-[48px] ${
+						pathname === '/business'
+							? 'bg-sb-secondary-300 text-sb-primary'
+							: ''
 					}`}
 				>
 					Business
@@ -40,14 +42,14 @@ function DesktopNavBar() {
 				{pathname == '/' ? (
 					<ButtonLink
 						href='/business'
-						className='flex text-base   justify-center items-center  bg-sb-secondary h-[34px]  px-3.5 py-[7px] rounded-[40px]'
+						className='flex text-base  text-sb-primary justify-center items-center  bg-sb-secondary h-[34px]  px-3.5 py-[7px] rounded-[40px]'
 					>
 						Start a Compaign
 					</ButtonLink>
 				) : (
 					<ButtonLink
 						href='/business'
-						className='flex text-base   justify-center items-center  bg-sb-secondary h-[34px]  px-3.5 py-[7px] rounded-[40px]'
+						className='flex text-base text-sb-primary  justify-center items-center  bg-sb-secondary h-[34px]  px-3.5 py-[7px] rounded-[40px]'
 					>
 						List Your Business
 					</ButtonLink>

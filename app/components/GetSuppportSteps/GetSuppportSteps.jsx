@@ -14,7 +14,7 @@ function GetSuppportSteps() {
 				<br /> takes just a few minutes, streamlining the process of turning
 				your financial need into a community support.
 			</p>
-			<div className='grid md:grid-cols-3 gap-2 md:gap-[88.5px] mt-10 py-[33.5px] '>
+			<div className='grid md:grid-cols-3 gap-2 lg:gap-[88.5px] mt-10 py-[33.5px] '>
 				{STEPSDATA.map((item) => (
 					<Steps
 						key={item.id}

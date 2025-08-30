@@ -7,12 +7,13 @@ import { IconPlayerPlayFilled } from '@tabler/icons-react';
 import { Button } from '@heroui/react';
 import { Modal, ModalContent, ModalBody, useDisclosure } from '@heroui/modal';
 import { HEROVIDEO } from '@/utils/constants';
+
 function PersonalHeader() {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
 	return (
 		<>
-			<header className=' md:flex md:items-center px-6 py-20 md:p-20 bg-sb-white-one '>
+			<header className=' md:flex md:items-center px-6 py-20 md:px-10 lg:p-20 bg-sb-white-one '>
 				<div>
 					<h1 className='text-[48px] lg:text-[72px] text-sb-primary font-[700] leading-[120%] tracking-[-3%]'>
 						Get financial
@@ -28,17 +29,17 @@ function PersonalHeader() {
 						your <br className='hidden lg:block' />
 						community.
 					</p>
-					<div className='mt-10 space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center'>
+					<div className='mt-10 space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full'>
 						<ButtonLink
 							href='#'
-							className='hover:bg-green-900 w-fit px-5 py-3.5 rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary h-[50px]'
+							className='hover:bg-[#144419ee] w-full md:w-fit px-5 py-3.5 rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary text-center h-[50px]'
 						>
 							Get Started Free
 						</ButtonLink>
 						<Button
 							onPress={onOpen}
 							href='#'
-							className='hover:bg-green-600 w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[50px]'
+							className='hover:bg-[#ccf546f1] w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[50px]'
 						>
 							<IconPlayerPlayFilled /> <span>See How It Works</span>
 						</Button>

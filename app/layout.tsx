@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import { Providers } from './providers';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
-import MobileFooter from './components/shared/MobileFooter';
 
 const InterSans = Inter({
 	weight: '400',

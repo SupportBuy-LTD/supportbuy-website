@@ -4,7 +4,7 @@ import React from 'react';
 
 function AskConfidently() {
 	return (
-		<section className='  px-10 md:px-20 py-[177px] bg-sb-white-two shadow-[0px_1px_4px_0px_#0C0C0D0D] mt-10 rounded-2xl'>
+		<section className=' px-6  py-6 xl:px-10  xl:py-[177px] bg-sb-white-two shadow-[0px_1px_4px_0px_#0C0C0D0D] mt-10 rounded-2xl'>
 			<div className='grid md:grid-cols-2 items-center gap-6 2xl:gap-10'>
 				<div>
 					<Image
@@ -24,14 +24,16 @@ function AskConfidently() {
 				</div>
 				<div>
 					<h2 className=' text-4xl  xl:text-[48px] text-sb-primary tracking-[-2%] leading-[120%] font-bold'>
-						You’re not alone. Ask confidently
+						You’re not alone.
+						<br />
+						Ask confidently
 					</h2>
-					<p className=' mt-3 2xl:mt-4 2xl:text-xl font-normal'>
+					<p className=' mt-3 2xl:mt-4 2xl:text-xl font-normal text-sb-dark-one'>
 						Getting financial help for daily needs often means awkward social
-						media requests, lack of transparency, and unreliable outcomes. It's
-						time for a better way.
+						media requests, lack of transparency, and unreliable outcomes.
+						It&apos;s time for a better way.
 					</p>
-					<ul className='flex list-inside list-disc mb-[36px] 2xl:mb-[58px] mt-3 2xl:mt-4'>
+					<ul className=' list lg:flex flex-wrap list-inside list-disc mb-[36px]  gap-2.5 2xl:mb-[58px] mt-3 2xl:mt-4 w-full text-sb-dark-one'>
 						<li>Medical</li>
 						<li>Education</li>
 						<li>Emergency</li>
