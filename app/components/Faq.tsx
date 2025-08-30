@@ -1,8 +1,7 @@
 import { faq } from '@/utils/faq';
 import { Accordion, AccordionItem } from '@heroui/react';
-import { IconCancel, IconCross, IconPlus, IconX } from '@tabler/icons-react';
+import { IconPlus, IconX } from '@tabler/icons-react';
 function Faq() {
-	const defaultContent = 'anjkajhjlalakjlakjaklmklm';
 	const itemClasses = {
 		base: 'py-0 w-full',
 		title:

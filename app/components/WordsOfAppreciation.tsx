@@ -1,4 +1,3 @@
-import { Button } from '@heroui/react';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import React, { useEffect, useState } from 'react';
 
@@ -20,7 +19,6 @@ const slidesData = [
 	},
 ];
 function WordsOfAppreciation() {
-	const [initial, setInitial] = useState(1);
 	const [currentSlide, setCurrentSlide] = useState(0);
 	console.log(currentSlide);
 	useEffect(() => {
@@ -69,9 +67,7 @@ function WordsOfAppreciation() {
 						<span>/</span>
 						{slidesData.length}
 					</span>
-					{/* {slidesData.map((_, slideIndex) => (
-						<span key={slideIndex}>{slideIndex}</span>
-					))} */}
+
 					<button
 						className='w-8 h-8 bg-sb-white-one rounded-sm p-1 cursor-pointer'
 						onClick={handleNextSlide}

@@ -12,7 +12,6 @@ import SupportBuyEmpowers from './components/SupportBuyEmpowers';
 import WordsOfAppreciation from './components/WordsOfAppreciation';
 import Faq from './components/Faq';
 import FooterCTA from './components/FooterCTA';
-import BusinessHeader from './business/_components/BusinessHeader';
 
 export default function Home() {
 	const { isMobile } = useWindowSize();
