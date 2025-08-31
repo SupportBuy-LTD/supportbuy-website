@@ -7,9 +7,10 @@ import MobileFooter from '../components/shared/MobileFooter';
 import DeskTopFooter from '../components/shared/DeskTopFooter';
 import FooterCTA from './_components/FooterCTA';
 import Faq from './_components/Faq';
-import WordsOfAppreciation from './_components/WordsOfAppreciation';
+
 import GetSuppportSteps from './_components/GetSuppportSteps/GetSuppportSteps';
 import BusinessHeader from './_components/BusinessHeader';
+import TurnICantAffortItIntoSales from './_components/TurnICantAffortItIntoSales';
 
 function Page() {
 	const { isMobile } = useWindowSize();
@@ -19,9 +20,10 @@ function Page() {
 				{!isMobile ? <DesktopNavBar /> : <MobileNavBar />}
 				<BusinessHeader />
 			</>
-			<main className='px-6 md:px-10 lg:px-20 '>
+			<main className='px-4 md:px-10 lg:px-20 '>
+				<TurnICantAffortItIntoSales />
 				<GetSuppportSteps />
-				<WordsOfAppreciation />
+
 				<Faq />
 				<FooterCTA />
 			</main>

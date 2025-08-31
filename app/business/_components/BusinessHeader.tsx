@@ -46,7 +46,7 @@ function BusinessHeader() {
 	const { isMobile } = useWindowSize();
 	return (
 		<>
-			<header className=' md:flex md:items-center px-6 py-20 md:px-10 lg:p-20 '>
+			<header className=' lg:flex lg:items-center px-4 py-20 md:px-10 lg:p-20 '>
 				<div>
 					<div className='mb-6'>
 						{!isMobile ? <ValueList /> : <MValueList />}
@@ -84,14 +84,14 @@ function BusinessHeader() {
 						width={621}
 						height={608}
 						alt='Unlock new sales channels effortlessly'
-						className='hidden md:block'
+						className='hidden lg:block w-full'
 					/>
 					<Image
 						src='/mobile_BussinessHeroImage.svg'
 						width={361}
 						height={344}
 						alt='Unlock new sales channels effortlessly'
-						className='md:hidden w-full'
+						className='lg:hidden w-full'
 					/>
 				</div>
 			</header>

@@ -9,7 +9,7 @@ import PersonalHeader from './components/PersonalHeader';
 import GetSuppportSteps from './components/GetSuppportSteps/GetSuppportSteps';
 import AskConfidently from './components/AskConfidently';
 import SupportBuyEmpowers from './components/SupportBuyEmpowers';
-import WordsOfAppreciation from './components/WordsOfAppreciation';
+
 import Faq from './components/Faq';
 import FooterCTA from './components/FooterCTA';
 
@@ -24,7 +24,7 @@ export default function Home() {
 				<GetSuppportSteps />
 				<AskConfidently />
 				<SupportBuyEmpowers />
-				<WordsOfAppreciation />
+
 				<Faq />
 			</main>
 			<FooterCTA />

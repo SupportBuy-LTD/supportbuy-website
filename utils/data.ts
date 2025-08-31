@@ -1,4 +1,12 @@
-import { Icon123, IconChartDots2, IconShare } from '@tabler/icons-react';
+import {
+	Icon123,
+	IconCash,
+	IconChartDots2,
+	IconHeartHandshake,
+	IconShare,
+	IconTags,
+	IconUsersGroup,
+} from '@tabler/icons-react';
 import { StepsProps } from '@/app/components/GetSuppportSteps/Steps';
 
 export const STEPSDATA: StepsProps[] = [
@@ -68,5 +76,39 @@ export const HowSupportBuyempowersyou = [
 			'See contributions in real-time and ensure funds directly address your needs.',
 
 		icon: IconChartDots2,
+	},
+];
+export const TurnICantAffortItIntoSalesData = [
+	{
+		id: 1,
+		title: 'Get Help, Guaranteed Payments',
+		description:
+			'Receive direct payment for your products/services once campaign goals are met..',
+
+		icon: IconCash,
+	},
+	{
+		id: 2,
+		title: 'Expand Customer Base',
+		description:
+			'Reach a wider audience through social sharing and community funding.',
+
+		icon: IconUsersGroup,
+	},
+	{
+		id: 3,
+		title: 'Boost Sales & Visibility',
+		description:
+			'Every campaign for your item acts as free marketing, driving interest.',
+
+		icon: IconTags,
+	},
+	{
+		id: 4,
+		title: 'Build Customer Loyalty',
+		description:
+			'Help customers acquire your products, fostering goodwill and repeat business.',
+
+		icon: IconHeartHandshake,
 	},
 ];

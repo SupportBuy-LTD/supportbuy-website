@@ -2,6 +2,28 @@ import { Button } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 
+const valPrep = [
+	'Medical',
+	'Education',
+	'Emergency',
+	'Business',
+	'Celebration',
+];
+
+function ValueList() {
+	return (
+		<ul className='flex  flex-wrap items-center text-sm gap-[10px] text-sb-dark-one lg:text-base'>
+			{valPrep.map((item, index) => (
+				<li key={index} className='inline-flex items-center'>
+					{index > 0 && (
+						<span className='mr-2 w-2 h-2 bg-sb-dark-one rounded-full inline-block'></span>
+					)}
+					{item}
+				</li>
+			))}
+		</ul>
+	);
+}
 function AskConfidently() {
 	return (
 		<section className=' px-6  py-6 xl:px-10  xl:py-[177px] bg-sb-white-two shadow-[0px_1px_4px_0px_#0C0C0D0D] mt-10 rounded-2xl'>
@@ -33,13 +55,16 @@ function AskConfidently() {
 						media requests, lack of transparency, and unreliable outcomes.
 						It&apos;s time for a better way.
 					</p>
-					<ul className=' list lg:flex flex-wrap list-inside list-disc mb-[36px]  gap-2.5 2xl:mb-[58px] mt-3 2xl:mt-4 w-full text-sb-dark-one'>
+					{/* <ul className=' list lg:flex flex-wrap list-inside list-disc mb-[36px]  gap-2.5 2xl:mb-[58px] mt-3 2xl:mt-4 w-full text-sb-dark-one'>
 						<li>Medical</li>
 						<li>Education</li>
 						<li>Emergency</li>
 						<li>Business</li>
 						<li>Celebration</li>
-					</ul>
+					</ul> */}
+					<div className='mt-4 mb-8'>
+						<ValueList />
+					</div>
 					<Button
 						href='#'
 						className='hover:bg-green-600 w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[34px]'
