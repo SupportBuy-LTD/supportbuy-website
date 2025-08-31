@@ -34,7 +34,7 @@ function TurnICantAffortItIntoSales() {
 					/>
 				</div>
 
-				<div className='flex flex-col gap-2'>
+				<div className='flex flex-col gap-2 mt-10 xl:mt-6'>
 					{TurnICantAffortItIntoSalesData.map((data) => {
 						return (
 							<div
