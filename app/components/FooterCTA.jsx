@@ -11,15 +11,15 @@ function FooterCTA() {
 		<>
 			<section className=' px-6  py-20 xl:px-10  xl:py-[148px] bg-sb-secondary shadow-[0px_1px_4px_0px_#0C0C0D0D] '>
 				<div>
-					<h2 className=' text-center text-[32px]  xl:text-[40px] text-sb-primary tracking-[-2%] leading-[120%] font-bold'>
+					<h2 className=' text-left xl:text-center text-[32px]  xl:text-[40px] text-sb-primary tracking-[-2%] leading-[120%] font-bold'>
 						Ready to experience the power of community support?
 					</h2>
 
-					<p className='text-center mt-3 2xl:mt-3 text-base 2xl:text-xl font-normal text-sb-dark-one'>
+					<p className='text-left xl:text-center mt-3 2xl:mt-3 text-base 2xl:text-xl font-normal text-sb-dark-one'>
 						Join thousands of young Africans already using SupportBuy to get the
 						help they need,
-						<br /> transparently and with dignity. It's more than just an app;
-						it's a movement.
+						<br className='hidden xl:block' /> transparently and with dignity.
+						It's more than just an app; it's a movement.
 					</p>
 				</div>
 				<div className=' pt-[62px] flex flex-col md:flex-row gap-[7px]  justify-center w-fit md:w-full'>
