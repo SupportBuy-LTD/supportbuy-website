@@ -6,7 +6,8 @@ import { ThemeProvider } from 'next-themes';
 
 const InterSans = Inter({
 	weight: '400',
-	subsets: ['latin'],
+	style: 'normal',
+	// subsets: ['cyrillic'],
 });
 
 export const metadata: Metadata = {

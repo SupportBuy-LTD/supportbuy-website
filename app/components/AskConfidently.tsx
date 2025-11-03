@@ -2,21 +2,18 @@ import { Button } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 
-const valPrep = [
-	'Medical',
-	'Education',
-	'Emergency',
-	'Business',
-	'Celebration',
-];
+const valPrep = ['Shopping', 'Bills', 'Emergency', 'Education', 'Celebration'];
 
 function ValueList() {
 	return (
-		<ul className='flex  flex-wrap items-center text-sm gap-[10px] text-sb-dark-one lg:text-base'>
+		<ul className='flex  flex-wrap items-center text-sm gap-[10px] text-sb-dark-one lg:text-base '>
 			{valPrep.map((item, index) => (
-				<li key={index} className='inline-flex items-center'>
+				<li
+					key={index}
+					className='inline-flex items-center text-[#272626] font-[600]'
+				>
 					{index > 0 && (
-						<span className='mr-2 w-2 h-2 bg-sb-dark-one rounded-full inline-block'></span>
+						<span className='mr-2 w-2 h-2 bg-sb-secondary rounded-full inline-block'></span>
 					)}
 					{item}
 				</li>
@@ -46,9 +43,9 @@ function AskConfidently() {
 				</div>
 				<div>
 					<h2 className=' text-4xl  xl:text-[48px] text-sb-primary tracking-[-2%] leading-[120%] font-bold'>
-						You’re not alone.
+						It’s all about giving
 						<br />
-						Ask confidently
+						and support.
 					</h2>
 					<p className=' mt-3 2xl:mt-4 2xl:text-xl font-normal text-sb-dark-one'>
 						Getting financial help for daily needs often means awkward social
@@ -67,7 +64,7 @@ function AskConfidently() {
 					</div>
 					<Button
 						href='#'
-						className='hover:bg-green-600 w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[34px]'
+						className='hover:bg-[#ccf546] w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[34px]'
 					>
 						Get Support Now
 					</Button>

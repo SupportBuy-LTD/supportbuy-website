@@ -4,6 +4,7 @@ import React, { memo } from 'react';
 import { Button } from '@heroui/react';
 import ButtonLink from '@/app/components/shared/ButtonLink';
 import useWindowSize from '@/hooks/useWindowSize';
+import HeroAnimation from './HeroAnimation';
 
 const valPrep = [
 	'Increase your reach',
@@ -46,13 +47,13 @@ function BusinessHeader() {
 	const { isMobile } = useWindowSize();
 	return (
 		<>
-			<header className=' lg:flex lg:items-center px-4 py-20 md:px-10 lg:p-20 '>
+			<header className=' gap-[52px] pt-[160px] xl:pt-[145px] lg:flex lg:items-start px-4 py-20 md:px-10 lg:p-20 '>
 				<div>
-					<div className='mb-6'>
+					<div className='mb-4'>
 						{!isMobile ? <ValueList /> : <MValueList />}
 					</div>
 
-					<h1 className='text-[48px] lg:text-[72px] text-sb-white-two font-[700] leading-[120%] tracking-[-3%]'>
+					<h1 className='text-[48px] lg:text-[72px] text-sb-white-two font-[700] leading-[110%] tracking-[-3%]'>
 						Unlock new
 						<br /> sales channels
 						<br />
@@ -78,21 +79,28 @@ function BusinessHeader() {
 						</ButtonLink>
 					</div>
 				</div>
-				<div className='mt-10 md:mt-0'>
-					<Image
-						src='/BussinessHeroImage.svg'
-						width={621}
-						height={608}
-						alt='Unlock new sales channels effortlessly'
-						className='hidden lg:block w-full'
-					/>
-					<Image
-						src='/mobile_BussinessHeroImage.svg'
-						width={361}
-						height={344}
-						alt='Unlock new sales channels effortlessly'
-						className='lg:hidden w-full'
-					/>
+				<div className='lg:pt-[22px] md:mt-0   '>
+					<div className='hidden relative lg:block pr-[75px]'>
+						<Image
+							src='/peopleBuying-heroImage.png'
+							width={526}
+							height={359}
+							alt='Unlock new sales channels effortlessly'
+							className='hidden lg:block w-full'
+						/>
+						<HeroAnimation />
+					</div>
+
+					<div className=' mt-[73px] mb-[108px] lg:hidden relative'>
+						<Image
+							src='/peopleBuying-image-mobile.png'
+							width={346}
+							height={247}
+							alt='Unlock new sales channels effortlessly'
+							className='lg:hidden w-full'
+						/>
+						<HeroAnimation />
+					</div>
 				</div>
 			</header>
 		</>

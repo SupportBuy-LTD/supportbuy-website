@@ -2,6 +2,7 @@ import React from 'react';
 
 import Steps from './Steps';
 import { BUSINESSSTEPSDATA } from '@/utils/data';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function GetSuppportSteps() {
 	return (
@@ -14,6 +15,15 @@ function GetSuppportSteps() {
 					Your journey to more sales starts with
 					<br /> these easy steps
 				</p>
+
+				<div className='hidden lg:block pt-6 h-[152px] w-[424px] '>
+					<DotLottieReact
+						src='/Your-journey-animation.lottie'
+						loop
+						autoplay
+						layout={{ fit: 'cover' }}
+					/>
+				</div>
 			</div>
 			<div className='lg:gap-[88.5px] mt-10 py-[33.5px] w-full max-w-[490px] '>
 				{BUSINESSSTEPSDATA.map((item) => (
