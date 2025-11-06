@@ -1,14 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 import { Providers } from './providers';
 import './globals.css';
 import { ThemeProvider } from 'next-themes';
 
-const InterSans = Inter({
-	weight: '400',
-	style: 'normal',
-	// subsets: ['cyrillic'],
-});
+// const InterSans = Inter({
+// 	weight: '400',
+// 	style: 'normal',
+// 	// subsets: ['cyrillic'],
+// });
 
 export const metadata: Metadata = {
 	title: 'SuportBuy | Get financial support fast,transparent & social',
@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' suppressHydrationWarning>
-			<body className={`${InterSans.className} antialiased relative `}>
+			<body className={` antialiased relative `}>
 				<ThemeProvider attribute='class' enableSystem defaultTheme='system'>
 					<Providers>{children}</Providers>
 				</ThemeProvider>
