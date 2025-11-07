@@ -6,7 +6,7 @@ function GetSuppportSteps() {
 	return (
 		<section className='mt-10  bg-sb-primary rounded-2xl px-6 py-6 md:px-20 md:py-[200px] shadow-[0px_1px_4px_0px_#0C0C0D0D]'>
 			<h2 className=' text-4xl md:text-5xl text-sb-secondary-300 tracking-[-2%] leading-[120%] font-bold'>
-				Get the support you need, easily
+				You’re not alone. Ask Confidently
 			</h2>
 			<p className='text-sb-white-one md:leading-[120%]  mt-3 text-base font-normal leading-6 tracking-[0.15px] '>
 				Embark on your fundraising journey effortlessly with SupportBuy - a

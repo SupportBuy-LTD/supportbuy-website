@@ -5,7 +5,7 @@ function Faq() {
 	const itemClasses = {
 		base: 'py-0 w-full',
 		title:
-			'text-sb-dark-one dark:text-sb-dark-one text-base xl:text-xl font-semibold',
+			'text-sb-dark-one dark:text-sb-dark-one text-base xl:text-xl font-medium',
 		indicator: 'text-medium cursor-pointer',
 		content: 'text-sb-dark-one text-sm font-normal',
 	};

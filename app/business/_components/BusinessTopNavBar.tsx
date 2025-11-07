@@ -1,10 +1,11 @@
 'use client';
 import React from 'react';
-import ButtonLink from './ButtonLink';
+
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import ButtonLink from '@/app/components/shared/ButtonLink';
 
-function DesktopNavBar() {
+function BusinessTopNavBar() {
 	const pathname = usePathname();
 
 	return (
@@ -41,13 +42,13 @@ function DesktopNavBar() {
 				</ButtonLink>
 				<ButtonLink
 					href='/business'
-					className='flex text-base  text-sb-primary justify-center items-center  bg-sb-secondary h-[34px]  px-3.5 py-[7px] rounded-[40px]'
+					className='flex text-base text-sb-primary  justify-center items-center  bg-sb-secondary h-[34px]  px-3.5 py-[7px] rounded-[40px]'
 				>
-					Start a Compaign
+					List Your Business
 				</ButtonLink>
 			</div>
 		</nav>
 	);
 }
 
-export default DesktopNavBar;
+export default BusinessTopNavBar;

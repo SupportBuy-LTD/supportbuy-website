@@ -7,7 +7,7 @@ import BrandIcon from './BrandIcon';
 function MobileNavBar() {
 	const pathname = usePathname();
 	return (
-		<nav className='h-20 px-6 bg-sb-white-two flex justify-between items-center w-full shadow-[0px_1px_4px_0px_#0C0C0D0D] '>
+		<nav className='h-20 px-6 bg-sb-white-two fixed z-50 flex justify-between items-center w-full shadow-[0px_1px_4px_0px_#0C0C0D0D] '>
 			<div>
 				<BrandIcon />
 			</div>

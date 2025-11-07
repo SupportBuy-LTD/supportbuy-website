@@ -3,6 +3,8 @@ import {
 	IconCash,
 	IconChartDots2,
 	IconHeartHandshake,
+	IconLock,
+	IconMessages,
 	IconShare,
 	IconTags,
 	IconUsersGroup,
@@ -76,6 +78,30 @@ export const HowSupportBuyempowersyou = [
 			'See contributions in real-time and ensure funds directly address your needs.',
 
 		icon: IconChartDots2,
+	},
+	{
+		id: 4,
+		title: 'Support & Fund Together',
+		description:
+			'Form private groups to collectively fund shared goals, strengthening bonds.',
+
+		icon: IconUsersGroup,
+	},
+	{
+		id: 5,
+		title: 'Engage & Connect',
+		description:
+			'An embedded social feed for sharing updates, reacting, and building community.',
+
+		icon: IconMessages,
+	},
+	{
+		id: 6,
+		title: 'Secure & Reliable',
+		description:
+			'Your transactions are safe, giving you peace of mind with every contribution.',
+
+		icon: IconLock,
 	},
 ];
 export const TurnICantAffortItIntoSalesData = [

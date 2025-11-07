@@ -1,2 +1,2 @@
 export const BRANDNAME = 'SupportBuy';
-export const HEROVIDEO = 'https://www.youtube.com/watch?v=_CivPviRD54 ';
+export const HEROVIDEO = 'https://youtu.be/PzoyKWfOAIw?feature=shared ';

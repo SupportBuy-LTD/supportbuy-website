@@ -9,27 +9,25 @@ function SupportBuyEmpowers() {
 	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 	return (
 		<>
-			<section className=' px-6  py-6 xl:px-[66px]  xl:py-[137px] bg-sb-white-two shadow-[0px_1px_4px_0px_#0C0C0D0D] mt-10 rounded-2xl'>
-				<div className='grid grid-cols-1 lg:grid-cols-2 items-center'>
-					<div>
-						<h2 className='text-4xl text-sb-primary xl:text-5xl font-bold'>
+			<section className=' px-6  py-6 xl:px-[63px]  xl:py-[137px] bg-[#FEFFF9] shadow-[0px_1px_4px_0px_#0C0C0D0D] mt-10 rounded-2xl'>
+				<div className='grid grid-cols-1 lg:grid-cols-3 lg:gap-6 items-center'>
+					<div className=' col-span-2'>
+						<h2 className='text-4xl text-sb-primary lg:text-[43px]  font-bold leading-[120%]'>
 							How SupportBuy empowers you
 						</h2>
-						<p className='mt-3 text-base 2xl:text-xl text-sb-dark-one'>
+						<p className='mt-3 text-base lg:text-xl text-sb-dark-one'>
 							We&apos;ve built a platform where support isn&apos;t charity,
-							it&apos;s <br className=' hidden xl:block' />
-							community. Experience a new level of ease, trust, and
-							<br className=' hidden xl:block' />
+							it&apos;s community. Experience a new level of ease, trust, and
 							connection.
 						</p>
 					</div>
-					<div className='p-4 mt-3 xl:mt-0 bg-sb-white-one shadow-[0px_1px_4px_0px_#0C0C0D0D] rounded-2xl xl:bg-none xl:shadow-[0px_0px_0px_0px]'>
+					<div className='p-4 mt-3 xl:mt-0 bg-[#FEFFF9] shadow-[0px_1px_4px_0px_#0C0C0D0D] rounded-2xl  '>
 						<Image
 							src='/HowSupportBuyempowersyou.svg'
 							role='button'
 							alt='How SupportBuy empowers you'
-							width={513}
-							height={282}
+							width={342}
+							height={136}
 							className='w-full cursor-pointer'
 							onClick={onOpen}
 						/>
@@ -40,16 +38,16 @@ function SupportBuyEmpowers() {
 						return (
 							<div
 								key={data.id}
-								className='rounded-2xl bg-sb-white-one px-6 pt-6 pb-[60px]'
+								className='rounded-2xl bg-[#D4F6B2] px-6 pt-6 pb-[60px]'
 							>
 								<div className='flex gap-2 items-center'>
 									<data.icon className='text-sb-primary' />
 
-									<h3 className=' text-base lg:text-[22px] text-sb-primary font-normal'>
+									<h3 className=' text-base lg:text-[18px] 2xl:text-[22px] text-sb-primary font-normal'>
 										{data.title}
 									</h3>
 								</div>
-								<p className='text-sm text-sb-dark-one leading-[140%] pl-9 mt-4'>
+								<p className='text-sm text-[#272626] leading-[140%] pl-9 mt-4'>
 									{data.description}
 								</p>
 							</div>
