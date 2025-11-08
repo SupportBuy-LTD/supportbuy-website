@@ -9,7 +9,7 @@ import {
 	IconTags,
 	IconUsersGroup,
 } from '@tabler/icons-react';
-import { StepsProps } from '@/app/components/GetSuppportSteps/Steps';
+import { StepsProps } from '@/components/GetSuppportSteps/Steps';
 
 export const STEPSDATA: StepsProps[] = [
 	{

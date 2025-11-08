@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 import ReactPlayer from 'react-player';
 import ButtonLink from './shared/ButtonLink';
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
-import { Button } from '@heroui/react';
+import { Button } from '@heroui/button';
 import { Modal, ModalContent, ModalBody, useDisclosure } from '@heroui/modal';
 import { HEROVIDEO } from '@/utils/constants';
 

@@ -1,10 +1,11 @@
 'use client';
 import Image from 'next/image';
 import React, { memo } from 'react';
-import { Button } from '@heroui/react';
-import ButtonLink from '@/app/components/shared/ButtonLink';
+import { Button } from '@heroui/button';
+
 import useWindowSize from '@/hooks/useWindowSize';
 import HeroAnimation from './HeroAnimation';
+import ButtonLink from '@/components/shared/ButtonLink';
 
 const valPrep = [
 	'Increase your reach',

@@ -1,4 +1,4 @@
-import { Button } from '@heroui/react';
+import { Button } from '@heroui/button';
 import Image from 'next/image';
 import React from 'react';
 

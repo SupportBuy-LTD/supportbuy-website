@@ -1,6 +1,6 @@
 import { HEROVIDEO } from '@/utils/constants';
 import { HowSupportBuyempowersyou } from '@/utils/data';
-import { Modal, ModalBody, ModalContent, useDisclosure } from '@heroui/react';
+import { Modal, ModalBody, ModalContent, useDisclosure } from '@heroui/modal';
 import Image from 'next/image';
 import React from 'react';
 import ReactPlayer from 'react-player';

@@ -1,4 +1,4 @@
-import ButtonLink from '@/app/components/shared/ButtonLink';
+import ButtonLink from '@/components/shared/ButtonLink';
 
 function FooterCTA() {
 	return (

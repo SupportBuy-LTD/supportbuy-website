@@ -1,17 +1,16 @@
 'use client';
 
+import AskConfidently from '@/components/AskConfidently';
+import Faq from '@/components/Faq';
+import PersonalHeader from '@/components/PersonalHeader';
+import DeskTopFooter from '@/components/shared/DeskTopFooter';
+import DesktopNavBar from '@/components/shared/DesktopNavBar';
+import MobileFooter from '@/components/shared/MobileFooter';
+import MobileNavBar from '@/components/shared/MobileNavBar';
+import SupportBuyEmpowers from '@/components/SupportBuyEmpowers';
+import FooterCTA from '@/components/FooterCTA';
+import GetSuppportSteps from '@/components/GetSuppportSteps/GetSuppportSteps';
 import useWindowSize from '@/hooks/useWindowSize';
-import DesktopNavBar from './components/shared/DesktopNavBar';
-import MobileNavBar from './components/shared/MobileNavBar';
-import DeskTopFooter from './components/shared/DeskTopFooter';
-import MobileFooter from './components/shared/MobileFooter';
-import PersonalHeader from './components/PersonalHeader';
-import GetSuppportSteps from './components/GetSuppportSteps/GetSuppportSteps';
-import AskConfidently from './components/AskConfidently';
-import SupportBuyEmpowers from './components/SupportBuyEmpowers';
-
-import Faq from './components/Faq';
-import FooterCTA from './components/FooterCTA';
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
