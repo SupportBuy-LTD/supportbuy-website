@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
-import MobileNavBar from '../components/shared/MobileNavBar';
+import MobileNavBar from '@/components/shared/MobileNavBar';
 import useWindowSize from '@/hooks/useWindowSize';
-import MobileFooter from '../components/shared/MobileFooter';
-import DeskTopFooter from '../components/shared/DeskTopFooter';
+import MobileFooter from '@/components/shared/MobileFooter';
+import DeskTopFooter from '@/components/shared/DeskTopFooter';
 import FooterCTA from './_components/FooterCTA';
 import Faq from './_components/Faq';
 

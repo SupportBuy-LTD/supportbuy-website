@@ -1,4 +1,4 @@
-import { Button } from '@heroui/react';
+import { Button } from '@heroui/button';
 import { IconPlayerPlayFilled } from '@tabler/icons-react';
 import ButtonLink from './shared/ButtonLink';
 import { Modal, ModalContent, ModalBody, useDisclosure } from '@heroui/modal';

@@ -3,7 +3,7 @@ import React from 'react';
 
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import ButtonLink from '@/app/components/shared/ButtonLink';
+import ButtonLink from '@/components/shared/ButtonLink';
 
 function BusinessTopNavBar() {
 	const pathname = usePathname();

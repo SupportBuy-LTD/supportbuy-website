@@ -1,5 +1,5 @@
 import React from 'react';
-import { STEPSDATA } from '../../../utils/data';
+import { STEPSDATA } from '@/utils/data';
 import Steps from './Steps';
 
 function GetSuppportSteps() {

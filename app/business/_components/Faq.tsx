@@ -1,5 +1,5 @@
 import { faq } from '@/utils/faq';
-import { Accordion, AccordionItem } from '@heroui/react';
+import { Accordion, AccordionItem } from '@heroui/accordion';
 import { IconPlus, IconX } from '@tabler/icons-react';
 function Faq() {
 	const itemClasses = {
