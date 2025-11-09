@@ -9,7 +9,7 @@ function HeroAnimation() {
 				<Pos />
 			</div>
 			<div className='p-4 bg-[#D4F6B2] border-4  border-[#144419] rounded-[8px] w-fit lg:h-fit  '>
-				<h4 className='mb-[14px]'>Sales</h4>
+				<h4 className='mb-[14px] text-[#272626]'>Sales</h4>
 				<div className=' w-[90px] lg:w-[90px] h-[84px] rounded overflow-hidden'>
 					<DotLottieReact
 						src='/upsell.lottie'
@@ -20,7 +20,7 @@ function HeroAnimation() {
 				</div>
 			</div>
 			<div className='p-4 bg-[#D4F6B2] border-4  border-[#144419] rounded-[8px] w-[139px] lg:w-[245px] h-fit '>
-				<h4 className='mb-[14px] '>Revenue</h4>
+				<h4 className='mb-[14px] text-[#27262'>Revenue</h4>
 				<div className=' w-[107px] lg:w-[150px] h-[84px] rounded overflow-hidden'>
 					<DotLottieReact
 						src='/Upward_trend.lottie'
