@@ -2,10 +2,12 @@
 import Image from 'next/image';
 import React, { memo } from 'react';
 import { Button } from '@heroui/button';
-
+import ReactPlayer from 'react-player';
 import useWindowSize from '@/hooks/useWindowSize';
 import HeroAnimation from './HeroAnimation';
 import ButtonLink from '@/components/shared/ButtonLink';
+import { Modal, ModalBody, ModalContent, useDisclosure } from '@heroui/modal';
+import { HEROVIDEOBUSINESS } from '@/utils/constants';
 
 const valPrep = [
 	'Increase your reach',
@@ -45,6 +47,7 @@ function MValueList() {
 }
 
 function BusinessHeader() {
+	const { isOpen, onOpen, onOpenChange } = useDisclosure();
 	const { isMobile } = useWindowSize();
 	return (
 		<>
@@ -68,13 +71,14 @@ function BusinessHeader() {
 					<div className='mt-10 space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full'>
 						<Button
 							href='#'
-							className='hover:bg-[#ccf546f1] w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[50px]'
+							className='flex items-center hover:bg-[#ccf546f1] w-fit px-5 md:mt-2 rounded-[50px] bg-sb-secondary text-[17px] text-sb-primary h-[50px]'
 						>
 							List Your Products/Services
 						</Button>
 						<ButtonLink
+							onClick={onOpen}
 							href='#'
-							className='hover:bg-[#144419ee] w-full md:w-fit px-5 py-3.5 rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary text-center h-[50px] border border-sb-secondary'
+							className='flex items-center justify-center hover:bg-[#144419ee] w-full md:w-fit px-5  rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary text-center h-[50px] border border-sb-secondary'
 						>
 							See How It Works
 						</ButtonLink>
@@ -104,6 +108,37 @@ function BusinessHeader() {
 					</div>
 				</div>
 			</header>
+			<Modal
+				isDismissable={false}
+				isKeyboardDismissDisabled={true}
+				isOpen={isOpen}
+				onOpenChange={onOpenChange}
+				size='5xl'
+				backdrop='opaque'
+				classNames={{
+					body: 'py-6',
+					backdrop: 'bg-sb-primary/50 backdrop-opacity-40',
+					base: 'border-[#292f46] bg-sb-primary dark:bg-[#19172c] text-[#a8b0d3]',
+				}}
+				radius='lg'
+			>
+				<ModalContent>
+					<>
+						<ModalBody>
+							<ReactPlayer
+								src={HEROVIDEOBUSINESS}
+								style={{
+									width: '100%',
+									height: 'auto',
+									aspectRatio: '16/9',
+									borderRadius: '24px',
+									marginTop: '24px',
+								}}
+							/>
+						</ModalBody>
+					</>
+				</ModalContent>
+			</Modal>
 		</>
 	);
 }

@@ -15,7 +15,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
 export default function Home() {
-	const { isMobile } = useWindowSize();
+	const { isMobile, hasMounted } = useWindowSize();
 	const pathname = usePathname();
 
 	return (

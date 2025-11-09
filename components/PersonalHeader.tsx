@@ -33,14 +33,14 @@ function PersonalHeader() {
 					<div className='mt-[38px] space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full '>
 						<ButtonLink
 							href='#'
-							className='hover:bg-[#144419ee] w-full md:w-fit px-5 py-3.5 rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary text-center h-[50px] block md:mt-2'
+							className='flex items-center justify-center hover:bg-[#144419ee] w-full md:w-fit px-5  rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary text-center h-[50px] md:mt-2'
 						>
 							Get Started Free
 						</ButtonLink>
 						<Button
 							onPress={onOpen}
 							href='#'
-							className='hover:bg-[#ccf546f1] w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[50px]'
+							className='flex items-center justify-center hover:bg-[#ccf546f1] w-fit px-5  rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[50px]'
 						>
 							<IconPlayerPlayFilled /> <span>See How It Works</span>
 						</Button>
