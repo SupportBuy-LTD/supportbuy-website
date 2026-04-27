@@ -20,7 +20,7 @@ export default function Home() {
 
 	return (
 		<>
-			{isMobile ? <MobileNavBar /> : <DesktopNavBar />}
+			<MobileNavBar /> <DesktopNavBar />
 			<AnimatePresence mode='wait'>
 				<motion.div
 					key={pathname} // this triggers animation when route changes
@@ -30,7 +30,7 @@ export default function Home() {
 					transition={{ duration: 0.4, ease: 'easeInOut' }}
 				>
 					<PersonalHeader />
-					<main className='px-6 md:px-10 lg:px-20 '>
+					<main className='px-6 md:px-10 lg:px-20 bg-sb-white-one '>
 						<GetSuppportSteps />
 						<AskConfidently />
 						<SupportBuyEmpowers />

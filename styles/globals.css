@@ -15,6 +15,16 @@
 	}
 }
 
+body {
+	background-color: #f5f5f5;
+}
+
 h1 .custom-header-light {
 	font-weight: 300 !important;
+}
+
+@media only screen {
+	.hero-image {
+		height: 740px;
+	}
 }

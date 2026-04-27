@@ -8,21 +8,23 @@ function DesktopNavBar() {
 	const pathname = usePathname();
 
 	return (
-		<nav className='h-20 md:px-10 lg:px-20 bg-sb-white-two fixed z-50 flex justify-between items-center w-full shadow-[0px_1px_4px_0px_#0C0C0D0D]'>
+		<nav className='h-20 md:px-10 lg:px-20 bg-sb-white-two fixed z-50 lg:flex justify-between items-center w-full shadow-[0px_1px_4px_0px_#0C0C0D0D] hidden'>
 			<div className='flex space-x-2'>
 				<ButtonLink
 					href='.'
-					className={`flex text-base text-sb-dark-one  font-bold justify-center items-center  h-10 px-3 py-[8px] rounded-[48px] ${
-						pathname === '/' ? 'bg-sb-secondary-300 text-sb-primary' : ''
+					className={` flex items-center justify-center text-base text-sb-dark-one  font-bold   h-10 px-3 rounded-[48px] ${
+						pathname === '/'
+							? 'bg-sb-secondary-300 text-sb-primary flex items-center justify-center h-10'
+							: ''
 					}`}
 				>
 					Personal
 				</ButtonLink>
 				<ButtonLink
 					href='/business'
-					className={`flex text-base text-sb-dark-one  font-bold justify-center items-center  h-10 px-3 py-[8px] rounded-[48px] ${
+					className={` flex items-center justify-center text-base text-sb-dark-one  font-bold   h-10 px-3 rounded-[48px] ${
 						pathname === '/business'
-							? 'bg-sb-secondary-300 text-sb-primary'
+							? 'bg-sb-secondary-300 text-sb-primary flex items-center justify-center h-10'
 							: ''
 					}`}
 				>
@@ -35,13 +37,13 @@ function DesktopNavBar() {
 			<div className='flex space-x-2'>
 				<ButtonLink
 					href='.'
-					className=' flex text-base text-white font-bold justify-center items-center bg-sb-primary h-[34px] px-3.5 py-[7px] rounded-[40px]'
+					className=' flex text-base text-white font-bold justify-center items-center bg-sb-primary h-[34px] px-3.5  pb-1 rounded-[40px]'
 				>
 					Log in
 				</ButtonLink>
 				<ButtonLink
 					href='/business'
-					className='flex text-base  text-sb-primary justify-center items-center  bg-sb-secondary h-[34px]  px-3.5 py-[7px] rounded-[40px]'
+					className='flex text-base  text-sb-primary justify-center items-center  bg-sb-secondary h-[34px]  px-3.5  pb-1 rounded-[40px]'
 				>
 					Start a Compaign
 				</ButtonLink>
