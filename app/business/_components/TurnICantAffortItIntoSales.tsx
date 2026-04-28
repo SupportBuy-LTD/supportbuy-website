@@ -1,5 +1,6 @@
 import { TurnICantAffortItIntoSalesData } from '@/utils/data';
-import { Button } from '@heroui/button';
+import ButtonLink from '@/components/shared/ButtonLink';
+import { ItemReveal } from '@/components/shared/ScrollReveal';
 import Image from 'next/image';
 import React from 'react';
 
@@ -37,30 +38,29 @@ function TurnICantAffortItIntoSales() {
 				<div className='flex flex-col gap-2 mt-10 xl:mt-6'>
 					{TurnICantAffortItIntoSalesData.map((data) => {
 						return (
-							<div
-								key={data.id}
-								className='rounded-2xl bg-sb-primary px-6 pt-6 pb-[60px]'
-							>
-								<div className='flex gap-2 items-center'>
-									<data.icon className='text-sb-tertiary' />
+							<ItemReveal key={data.id}>
+								<div className='rounded-2xl bg-sb-primary px-6 pt-6 pb-[60px] h-full'>
+									<div className='flex gap-2 items-center'>
+										<data.icon className='text-sb-tertiary' />
 
-									<h3 className=' text-base lg:text-lg 2xl:text-[22px] text-sb-tertiary font-normal'>
-										{data.title}
-									</h3>
+										<h3 className=' text-base lg:text-lg 2xl:text-[22px] text-sb-tertiary font-normal'>
+											{data.title}
+										</h3>
+									</div>
+									<p className='text-sm text-sb-white-one leading-[140%] pl-9 mt-4'>
+										{data.description}
+									</p>
 								</div>
-								<p className='text-sm text-sb-white-one leading-[140%] pl-9 mt-4'>
-									{data.description}
-								</p>
-							</div>
+							</ItemReveal>
 						);
 					})}
 					<div className='flex  justify-center lg:justify-start mt-12'>
-						<Button
-							href='#'
-							className='hover:bg-[#ccf546f1] w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[50px]'
+						<ButtonLink
+							href='https://supportbuy-platform.onrender.com/signup?u=BUSINESS&m=STANDARD'
+							className='hover:bg-[#ccf546f1] w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer flex items-center justify-center text-[17px] text-sb-primary h-[50px]'
 						>
 							Open Your Business Account Now
-						</Button>
+						</ButtonLink>
 					</div>
 				</div>
 			</div>

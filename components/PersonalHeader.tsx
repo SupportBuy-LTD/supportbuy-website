@@ -13,8 +13,8 @@ function PersonalHeader() {
 
 	return (
 		<>
-			<header className='md:flex md:items-center px-6 pt-40 pb-20 md:px-10 lg:px-20 bg-sb-white-one lg:h-[900px]'>
-				<div className='max-w-[729px]'>
+			<header className='lg:flex lg:items-center justify-between gap-10 px-6 pt-32 pb-0 md:px-10 lg:pt-40 lg:pb-20 lg:px-20 bg-sb-white-one lg:h-[900px]'>
+				<div className='flex-1 max-w-[729px]'>
 					<h1 className='text-[48px] lg:text-[72px] text-sb-primary font-bold leading-[120%] tracking-[-3%]'>
 						Get financial
 						<br /> support <span className=' custom-header-light'>fast</span>,
@@ -32,7 +32,7 @@ function PersonalHeader() {
 					</p>
 					<div className='mt-[38px] space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full '>
 						<ButtonLink
-							href='#'
+							href='https://supportbuy-platform.onrender.com/signup?u=CUSTOMER&m=STANDARD'
 							className='flex items-center justify-center hover:bg-[#144419ee] w-full md:w-fit px-5  rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary text-center h-[50px] md:mt-2'
 						>
 							Get Started Free
@@ -46,18 +46,22 @@ function PersonalHeader() {
 						</Button>
 					</div>
 				</div>
-				<div className=' mt-10 lg:mt-0 lg:relative xl:h-[600px] xl:flex-1/2 hero-image'>
+				{/* Desktop Image Container */}
+				<div className='hidden lg:flex lg:mt-0 flex-1 relative xl:h-[600px] hero-image justify-end'>
 					<img
 						src='/hero_image.png'
 						alt='Enjoyment'
-						className='hidden md:block w-full h-full '
+						className='w-full max-w-none h-auto object-contain object-right'
 					/>
+				</div>
+				{/* Mobile Image Container */}
+				<div className='lg:hidden mt-4 flex justify-center w-full'>
 					<Image
 						src='/mobile_hero_illustration.svg'
 						width={345}
 						height={414}
 						alt='Enjoyment'
-						className='md:hidden w-full'
+						className='w-full max-w-[345px] h-auto mx-auto'
 					/>
 				</div>
 			</header>

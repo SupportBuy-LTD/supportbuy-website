@@ -11,6 +11,7 @@ import SupportBuyEmpowers from '@/components/SupportBuyEmpowers';
 import FooterCTA from '@/components/FooterCTA';
 import GetSuppportSteps from '@/components/GetSuppportSteps/GetSuppportSteps';
 import useWindowSize from '@/hooks/useWindowSize';
+import ScrollReveal from '@/components/shared/ScrollReveal';
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
@@ -31,15 +32,24 @@ export default function Home() {
 				>
 					<PersonalHeader />
 					<main className='px-6 md:px-10 lg:px-20 bg-sb-white-one '>
-						<GetSuppportSteps />
-						<AskConfidently />
-						<SupportBuyEmpowers />
-
-						<Faq />
+						<ScrollReveal staggerChildren={0.15}>
+							<GetSuppportSteps />
+						</ScrollReveal>
+						<ScrollReveal>
+							<AskConfidently />
+						</ScrollReveal>
+						<ScrollReveal staggerChildren={0.15}>
+							<SupportBuyEmpowers />
+						</ScrollReveal>
+						<ScrollReveal>
+							<Faq />
+						</ScrollReveal>
 					</main>
 				</motion.div>
 			</AnimatePresence>
-			<FooterCTA />
+			<ScrollReveal>
+				<FooterCTA />
+			</ScrollReveal>
 			{isMobile ? <MobileFooter /> : <DeskTopFooter />}
 		</>
 	);

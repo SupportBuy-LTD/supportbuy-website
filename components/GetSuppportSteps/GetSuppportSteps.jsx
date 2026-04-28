@@ -1,10 +1,11 @@
 import React from 'react';
 import { STEPSDATA } from '@/utils/data';
+import { ItemReveal } from '@/components/shared/ScrollReveal';
 import Steps from './Steps';
 
 function GetSuppportSteps() {
 	return (
-		<section className='mt-10  bg-sb-primary rounded-2xl px-6 py-6 md:px-20 md:py-[200px] shadow-[0px_1px_4px_0px_#0C0C0D0D]'>
+		<section className='mt-4 lg:mt-10 bg-sb-primary rounded-2xl px-6 py-6 md:px-20 md:py-[200px] shadow-[0px_1px_4px_0px_#0C0C0D0D]'>
 			<h2 className=' text-4xl md:text-5xl text-sb-secondary-300 tracking-[-2%] leading-[120%] font-bold'>
 				You’re not alone. Ask Confidently
 			</h2>
@@ -16,12 +17,13 @@ function GetSuppportSteps() {
 			</p>
 			<div className='grid md:grid-cols-3 gap-2 lg:gap-[88.5px] mt-10 py-[33.5px] '>
 				{STEPSDATA.map((item) => (
-					<Steps
-						key={item.id}
-						id={item.id}
-						title={item.title}
-						description={item.description}
-					/>
+					<ItemReveal key={item.id}>
+						<Steps
+							id={item.id}
+							title={item.title}
+							description={item.description}
+						/>
+					</ItemReveal>
 				))}
 			</div>
 		</section>
