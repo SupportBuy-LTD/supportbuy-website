@@ -46,7 +46,7 @@ function PersonalHeader() {
 						</Button>
 					</div>
 				</div>
-				<div className=' mt-10 lg:mt-0 lg:relative  lg:h-[740px] '>
+				<div className=' mt-10 lg:mt-0 lg:relative xl:h-[600px] xl:flex-1/2 hero-image'>
 					<img
 						src='/hero_image.png'
 						alt='Enjoyment'

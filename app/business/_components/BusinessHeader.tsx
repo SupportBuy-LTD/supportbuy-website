@@ -51,8 +51,8 @@ function BusinessHeader() {
 	const { isMobile } = useWindowSize();
 	return (
 		<>
-			<header className=' gap-[52px] pt-[160px] xl:pt-[145px] lg:flex lg:items-start px-4 py-20 md:px-10 lg:p-20 '>
-				<div>
+			<header className=' gap-[52px] pt-[160px] xl:pt-[145px] lg:flex lg:items-start justify-between px-4 py-20 md:px-10 lg:p-20  '>
+				<div className=' flex-1/2'>
 					<div className='mb-4'>
 						{!isMobile ? <ValueList /> : <MValueList />}
 					</div>
@@ -84,15 +84,17 @@ function BusinessHeader() {
 						</ButtonLink>
 					</div>
 				</div>
-				<div className='lg:pt-[22px] md:mt-0   '>
-					<div className='hidden relative lg:block pr-[75px]'>
-						<Image
-							src='/peopleBuying-heroImage.png'
-							width={526}
-							height={359}
-							alt='Unlock new sales channels effortlessly'
-							className='hidden lg:block w-full'
-						/>
+				<div className='lg:pt-[22px] md:mt-0 flex-1/2 xl:flex xl:justify-end  '>
+					<div className='hidden relative lg:block pr-[75px] lg:w-[621px]'>
+						<div className='xl:w-[526px] xl:ml-10'>
+							<Image
+								src='/peopleBuying-heroImage.png'
+								width={526}
+								height={359}
+								alt='Unlock new sales channels effortlessly'
+								className='hidden lg:block w-full'
+							/>
+						</div>
 						<HeroAnimation />
 					</div>
 

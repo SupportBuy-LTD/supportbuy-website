@@ -19,8 +19,7 @@ function Page() {
 	const pathname = usePathname();
 	return (
 		<div className='bg-sb-primary'>
-			{!isMobile ? <BusinessTopNavBar /> : <MobileNavBar />}
-
+			<BusinessTopNavBar /> <MobileNavBar />
 			<AnimatePresence mode='wait'>
 				<motion.div
 					key={pathname} // this triggers animation when route changes

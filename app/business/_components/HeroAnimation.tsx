@@ -4,7 +4,8 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 function HeroAnimation() {
 	return (
-		<div className='flex items-center gap-[16px]  absolute bottom-[-95px] lg:bottom-[-110px] left-1/2 -translate-x-1/2 lg:left-[-60px] lg:translate-none'>
+		// this left-1/2 -translate-x-1/2 lg:left-[-60px] need to be here on mobile but gone on xl
+		<div className='flex items-center gap-[16px]  absolute bottom-[-95px] lg:bottom-[-110px]  lg:translate-none'>
 			<div className=' hidden lg:block h-[180px]'>
 				<Pos />
 			</div>
