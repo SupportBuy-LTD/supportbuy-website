@@ -19,7 +19,7 @@ function FooterCTA() {
 				<div className='flex justify-center'>
 					<div className=' pt-[62px] flex flex-col md:flex-row gap-[7px]  justify-center w-fit md:w-full'>
 						<ButtonLink
-							href='#'
+							href='https://supportbuy-platform.onrender.com/signup?u=BUSINESS&m=STANDARD'
 							className='hover:bg-[#144419ee] w-fit px-5 py-3.5 rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary h-[50px]'
 						>
 							Register Your Business Today

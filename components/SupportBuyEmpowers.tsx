@@ -1,5 +1,6 @@
 import { HEROVIDEO } from '@/utils/constants';
 import { HowSupportBuyempowersyou } from '@/utils/data';
+import { ItemReveal } from '@/components/shared/ScrollReveal';
 import { Modal, ModalBody, ModalContent, useDisclosure } from '@heroui/modal';
 import Image from 'next/image';
 import React from 'react';
@@ -36,21 +37,20 @@ function SupportBuyEmpowers() {
 				<div className='grid grid-auto gap-4 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3  mt-6 xl:mt-10 '>
 					{HowSupportBuyempowersyou.map((data) => {
 						return (
-							<div
-								key={data.id}
-								className='rounded-2xl bg-[#D4F6B2] px-6 pt-6 pb-[60px]'
-							>
-								<div className='flex gap-2 items-center'>
-									<data.icon className='text-sb-primary' />
+							<ItemReveal key={data.id}>
+								<div className='rounded-2xl bg-[#D4F6B2] px-6 pt-6 pb-[60px] h-full'>
+									<div className='flex gap-2 items-center'>
+										<data.icon className='text-sb-primary' />
 
-									<h3 className=' text-base lg:text-[18px] 2xl:text-[22px] text-sb-primary font-normal'>
-										{data.title}
-									</h3>
+										<h3 className=' text-base lg:text-[18px] 2xl:text-[22px] text-sb-primary font-normal'>
+											{data.title}
+										</h3>
+									</div>
+									<p className='text-sm text-[#272626] leading-[140%] pl-9 mt-4'>
+										{data.description}
+									</p>
 								</div>
-								<p className='text-sm text-[#272626] leading-[140%] pl-9 mt-4'>
-									{data.description}
-								</p>
-							</div>
+							</ItemReveal>
 						);
 					})}
 				</div>

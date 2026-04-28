@@ -12,21 +12,19 @@ function DesktopNavBar() {
 			<div className='flex space-x-2'>
 				<ButtonLink
 					href='.'
-					className={` flex items-center justify-center text-base text-sb-dark-one  font-bold   h-10 px-3 rounded-[48px] ${
-						pathname === '/'
+					className={` flex items-center justify-center text-base text-sb-dark-one  font-bold   h-10 px-3 rounded-[48px] ${pathname === '/'
 							? 'bg-sb-secondary-300 text-sb-primary flex items-center justify-center h-10'
 							: ''
-					}`}
+						}`}
 				>
 					Personal
 				</ButtonLink>
 				<ButtonLink
 					href='/business'
-					className={` flex items-center justify-center text-base text-sb-dark-one  font-bold   h-10 px-3 rounded-[48px] ${
-						pathname === '/business'
+					className={` flex items-center justify-center text-base text-sb-dark-one  font-bold   h-10 px-3 rounded-[48px] ${pathname === '/business'
 							? 'bg-sb-secondary-300 text-sb-primary flex items-center justify-center h-10'
 							: ''
-					}`}
+						}`}
 				>
 					Business
 				</ButtonLink>
@@ -36,13 +34,13 @@ function DesktopNavBar() {
 			</div>
 			<div className='flex space-x-2'>
 				<ButtonLink
-					href='.'
+					href='https://supportbuy-platform.onrender.com/signin'
 					className=' flex text-base text-white font-bold justify-center items-center bg-sb-primary h-[34px] px-3.5  pb-1 rounded-[40px]'
 				>
 					Log in
 				</ButtonLink>
 				<ButtonLink
-					href='/business'
+					href='https://supportbuy-platform.onrender.com/signup?u=CUSTOMER&m=STANDARD'
 					className='flex text-base  text-sb-primary justify-center items-center  bg-sb-secondary h-[34px]  px-3.5  pb-1 rounded-[40px]'
 				>
 					Start a Compaign

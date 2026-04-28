@@ -11,6 +11,7 @@ import GetSuppportSteps from './_components/GetSuppportSteps/GetSuppportSteps';
 import BusinessHeader from './_components/BusinessHeader';
 import TurnICantAffortItIntoSales from './_components/TurnICantAffortItIntoSales';
 import BusinessTopNavBar from './_components/BusinessTopNavBar';
+import ScrollReveal from '@/components/shared/ScrollReveal';
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
@@ -30,14 +31,21 @@ function Page() {
 				>
 					<BusinessHeader />
 					<main className='px-4 md:px-10 lg:px-20 '>
-						<TurnICantAffortItIntoSales />
-						<GetSuppportSteps />
-
-						<Faq />
+						<ScrollReveal staggerChildren={0.15}>
+							<TurnICantAffortItIntoSales />
+						</ScrollReveal>
+						<ScrollReveal staggerChildren={0.15}>
+							<GetSuppportSteps />
+						</ScrollReveal>
+						<ScrollReveal>
+							<Faq />
+						</ScrollReveal>
 					</main>
 				</motion.div>
 			</AnimatePresence>
-			<FooterCTA />
+			<ScrollReveal>
+				<FooterCTA />
+			</ScrollReveal>
 			{isMobile ? <MobileFooter /> : <DeskTopFooter />}
 		</div>
 	);

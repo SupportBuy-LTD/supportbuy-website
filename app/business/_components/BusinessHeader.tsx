@@ -69,12 +69,12 @@ function BusinessHeader() {
 						community-backed funding.
 					</p>
 					<div className='mt-10 space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full'>
-						<Button
-							href='#'
-							className='flex items-center hover:bg-[#ccf546f1] w-fit px-5 md:mt-2 rounded-[50px] bg-sb-secondary text-[17px] text-sb-primary h-[50px]'
+						<ButtonLink
+							href='https://supportbuy-platform.onrender.com/signup?u=BUSINESS&m=STANDARD'
+							className='flex items-center justify-center hover:bg-[#ccf546f1] w-fit px-5 md:mt-2 rounded-[50px] bg-sb-secondary text-[17px] text-sb-primary h-[50px]'
 						>
 							List Your Products/Services
-						</Button>
+						</ButtonLink>
 						<ButtonLink
 							onClick={onOpen}
 							href='#'

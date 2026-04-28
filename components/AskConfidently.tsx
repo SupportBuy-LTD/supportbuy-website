@@ -1,6 +1,6 @@
-import { Button } from '@heroui/button';
 import Image from 'next/image';
 import React from 'react';
+import ButtonLink from './shared/ButtonLink';
 
 const valPrep = ['Shopping', 'Bills', 'Emergency', 'Education', 'Celebration'];
 
@@ -62,12 +62,12 @@ function AskConfidently() {
 					<div className='mt-4 mb-8'>
 						<ValueList />
 					</div>
-					<Button
-						href='#'
-						className='hover:bg-[#ccf546] w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[34px]'
+					<ButtonLink
+						href='https://supportbuy-platform.onrender.com/signup?u=CUSTOMER&m=STANDARD'
+						className='hover:bg-[#ccf546] w-fit px-5 py-3.5 rounded-[50px] bg-sb-secondary cursor-pointer flex items-center justify-center text-[17px] text-sb-primary h-[34px]'
 					>
 						Get Support Now
-					</Button>
+					</ButtonLink>
 				</div>
 			</div>
 		</section>
