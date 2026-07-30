@@ -1,148 +1,177 @@
-'use client';
-import Image from 'next/image';
-import React, { memo } from 'react';
-import { Button } from '@heroui/button';
-import ReactPlayer from 'react-player';
-import useWindowSize from '@/hooks/useWindowSize';
-import HeroAnimation from './HeroAnimation';
-import ButtonLink from '@/components/shared/ButtonLink';
-import { Modal, ModalBody, ModalContent, useDisclosure } from '@heroui/modal';
-import { HEROVIDEOBUSINESS } from '@/utils/constants';
+"use client";
+import Image from "next/image";
+import React, { memo } from "react";
+import { Button } from "@heroui/button";
+import ReactPlayer from "react-player";
+import useWindowSize from "@/hooks/useWindowSize";
+import HeroAnimation from "./HeroAnimation";
+import ButtonLink from "@/components/shared/ButtonLink";
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  useDisclosure,
+} from "@heroui/modal";
+import { HEROVIDEOBUSINESS } from "@/utils/constants";
 
 const valPrep = [
-	'Increase your reach',
-	'Simplify payments',
-	'Grow your business',
+  "Increase your reach",
+  "Simplify payments",
+  "Grow your business",
 ];
-const mvalPrep = ['Increase your reach', 'Grow your business'];
+const mvalPrep = [
+  "Increase your reach",
+  "Grow your business",
+];
 
 function ValueList() {
-	return (
-		<ul className='flex  items-center text-sm gap-[10px] text-sb-tertiary lg:text-base'>
-			{valPrep.map((item, index) => (
-				<li key={index} className='inline-flex items-center'>
-					{index > 0 && (
-						<span className='mr-2 w-2 h-2 bg-sb-secondary rounded-full inline-block'></span>
-					)}
-					{item}
-				</li>
-			))}
-		</ul>
-	);
+  return (
+    <ul className="flex  items-center text-sm gap-[10px] text-sb-tertiary lg:text-base">
+      {valPrep.map((item, index) => (
+        <li
+          key={index}
+          className="inline-flex items-center"
+        >
+          {index > 0 && (
+            <span className="mr-2 w-2 h-2 bg-sb-secondary rounded-full inline-block"></span>
+          )}
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 function MValueList() {
-	return (
-		<ul className='flex  items-center text-sm gap-[10px] text-sb-tertiary lg:text-base'>
-			{mvalPrep.map((item, index) => (
-				<li key={index} className='inline-flex items-center'>
-					{index > 0 && (
-						<span className='mr-2 w-2 h-2 bg-sb-secondary rounded-full inline-block'></span>
-					)}
-					{item}
-				</li>
-			))}
-		</ul>
-	);
+  return (
+    <ul className="flex  items-center text-sm gap-[10px] text-sb-tertiary lg:text-base">
+      {mvalPrep.map((item, index) => (
+        <li
+          key={index}
+          className="inline-flex items-center"
+        >
+          {index > 0 && (
+            <span className="mr-2 w-2 h-2 bg-sb-secondary rounded-full inline-block"></span>
+          )}
+          {item}
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 function BusinessHeader() {
-	const { isOpen, onOpen, onOpenChange } = useDisclosure();
-	const { isMobile } = useWindowSize();
-	return (
-		<>
-			<header className=' gap-[52px] pt-[160px] xl:pt-[145px] lg:flex lg:items-start justify-between px-4 py-20 md:px-10 lg:p-20  '>
-				<div className=' flex-1/2'>
-					<div className='mb-4'>
-						{!isMobile ? <ValueList /> : <MValueList />}
-					</div>
+  const {
+    isOpen,
+    onOpen,
+    onOpenChange,
+  } = useDisclosure();
+  const { isMobile } = useWindowSize();
+  return (
+    <>
+      <header className=" gap-[52px] pt-[160px] xl:pt-[145px] lg:flex lg:items-start justify-between px-4 py-20 md:px-10 lg:p-20  ">
+        <div className=" flex-1/2">
+          <div className="mb-4">
+            {!isMobile ? (
+              <ValueList />
+            ) : (
+              <MValueList />
+            )}
+          </div>
 
-					<h1 className='text-[48px] lg:text-[72px] text-sb-white-two font-[700] leading-[110%] tracking-[-3%]'>
-						Unlock new
-						<br /> sales channels
-						<br />
-						<span className='text-sb-secondary'>effortlessly</span>
-					</h1>
-					<p className=' text-base lg:text-[20px] mt-6 text-sb-white-two leading-[120%]'>
-						SupportBuy connects your products and services
-						<br className='hidden lg:block' /> directly with customers who get
-						community-backed funding.
-					</p>
-					<div className='mt-10 space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full'>
-						<ButtonLink
-							href='https://supportbuy-platform.onrender.com/signup?u=BUSINESS&m=STANDARD'
-							className='flex items-center justify-center hover:bg-[#ccf546f1] w-fit px-5 md:mt-2 rounded-[50px] bg-sb-secondary text-[17px] text-sb-primary h-[50px]'
-						>
-							List Your Products/Services
-						</ButtonLink>
-						<ButtonLink
-							onClick={onOpen}
-							href='#'
-							className='flex items-center justify-center hover:bg-[#144419ee] w-full md:w-fit px-5  rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary text-center h-[50px] border border-sb-secondary'
-						>
-							See How It Works
-						</ButtonLink>
-					</div>
-				</div>
-				<div className='lg:pt-[22px] md:mt-0 flex-1/2 xl:flex xl:justify-end  '>
-					<div className='hidden relative lg:block pr-[75px] lg:w-[621px]'>
-						<div className='xl:w-[526px] xl:ml-10'>
-							<Image
-								src='/peopleBuying-heroImage.png'
-								width={526}
-								height={359}
-								alt='Unlock new sales channels effortlessly'
-								className='hidden lg:block w-full'
-							/>
-						</div>
-						<HeroAnimation />
-					</div>
+          <h1 className="text-[48px] lg:text-[72px] text-sb-white-two font-[700] leading-[110%] tracking-[-3%]">
+            Unlock new
+            <br /> sales channels
+            <br />
+            <span className="text-sb-secondary">
+              effortlessly
+            </span>
+          </h1>
+          <p className=" text-base lg:text-[20px] mt-6 text-sb-white-two leading-[120%]">
+            SupportBuy connects your
+            products and services
+            <br className="hidden lg:block" />{" "}
+            directly with customers who
+            get community-backed
+            funding.
+          </p>
+          <div className="mt-10 space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full">
+            <ButtonLink
+              href="https://app.supportbuy.com/signup?u=BUSINESS&m=STANDARD"
+              className="flex items-center justify-center hover:bg-[#ccf546f1] w-fit px-5 md:mt-2 rounded-[50px] bg-sb-secondary text-[17px] text-sb-primary h-[50px]"
+            >
+              List Your
+              Products/Services
+            </ButtonLink>
+            <ButtonLink
+              onClick={onOpen}
+              href="#"
+              className="flex items-center justify-center hover:bg-[#144419ee] w-full md:w-fit px-5  rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary text-center h-[50px] border border-sb-secondary"
+            >
+              See How It Works
+            </ButtonLink>
+          </div>
+        </div>
+        <div className="lg:pt-[22px] md:mt-0 flex-1/2 xl:flex xl:justify-end  ">
+          <div className="hidden relative lg:block pr-[75px] lg:w-[621px]">
+            <div className="xl:w-[526px] xl:ml-10">
+              <Image
+                src="/peopleBuying-heroImage.png"
+                width={526}
+                height={359}
+                alt="Unlock new sales channels effortlessly"
+                className="hidden lg:block w-full"
+              />
+            </div>
+            <HeroAnimation />
+          </div>
 
-					<div className=' mt-[73px] mb-[108px] lg:hidden relative'>
-						<Image
-							src='/peopleBuying-image-mobile.png'
-							width={346}
-							height={247}
-							alt='Unlock new sales channels effortlessly'
-							className='lg:hidden w-full'
-						/>
-						<HeroAnimation />
-					</div>
-				</div>
-			</header>
-			<Modal
-				isDismissable={false}
-				isKeyboardDismissDisabled={true}
-				isOpen={isOpen}
-				onOpenChange={onOpenChange}
-				size='5xl'
-				backdrop='opaque'
-				classNames={{
-					body: 'py-6',
-					backdrop: 'bg-sb-primary/50 backdrop-opacity-40',
-					base: 'border-[#292f46] bg-sb-primary dark:bg-[#19172c] text-[#a8b0d3]',
-				}}
-				radius='lg'
-			>
-				<ModalContent>
-					<>
-						<ModalBody>
-							<ReactPlayer
-								src={HEROVIDEOBUSINESS}
-								style={{
-									width: '100%',
-									height: 'auto',
-									aspectRatio: '16/9',
-									borderRadius: '24px',
-									marginTop: '24px',
-								}}
-							/>
-						</ModalBody>
-					</>
-				</ModalContent>
-			</Modal>
-		</>
-	);
+          <div className=" mt-[73px] mb-[108px] lg:hidden relative">
+            <Image
+              src="/peopleBuying-image-mobile.png"
+              width={346}
+              height={247}
+              alt="Unlock new sales channels effortlessly"
+              className="lg:hidden w-full"
+            />
+            <HeroAnimation />
+          </div>
+        </div>
+      </header>
+      <Modal
+        isDismissable={false}
+        isKeyboardDismissDisabled={true}
+        isOpen={isOpen}
+        onOpenChange={onOpenChange}
+        size="5xl"
+        backdrop="opaque"
+        classNames={{
+          body: "py-6",
+          backdrop:
+            "bg-sb-primary/50 backdrop-opacity-40",
+          base: "border-[#292f46] bg-sb-primary dark:bg-[#19172c] text-[#a8b0d3]",
+        }}
+        radius="lg"
+      >
+        <ModalContent>
+          <>
+            <ModalBody>
+              <ReactPlayer
+                src={HEROVIDEOBUSINESS}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  aspectRatio: "16/9",
+                  borderRadius: "24px",
+                  marginTop: "24px",
+                }}
+              />
+            </ModalBody>
+          </>
+        </ModalContent>
+      </Modal>
+    </>
+  );
 }
 
 export default memo(BusinessHeader);
