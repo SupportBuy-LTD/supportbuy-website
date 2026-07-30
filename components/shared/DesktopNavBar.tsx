@@ -32,17 +32,22 @@ function DesktopNavBar() {
         </ButtonLink>
       </div>
       <div className="absolute left-1/2 transform -translate-x-1/2">
-        <Image src="/sb_logo.svg" height={48} width={155} alt="sb logo" />
+        <Image
+          src="/sb_logo.svg"
+          height={48}
+          width={155}
+          alt="sb logo"
+        />
       </div>
       <div className="flex space-x-2">
         <ButtonLink
-          href="https://supportbuy-platform.onrender.com/signin"
+          href="https://app.supportbuy.com/signin"
           className=" flex text-base text-white font-bold justify-center items-center bg-sb-primary h-[34px] px-3.5  pb-1 rounded-[40px]"
         >
           Log in
         </ButtonLink>
         <ButtonLink
-          href="https://supportbuy-platform.onrender.com/signup?u=CUSTOMER&m=STANDARD"
+          href="https://app.supportbuy.com/signup?u=CUSTOMER&m=STANDARD"
           className="flex text-base  text-sb-primary justify-center items-center  bg-sb-secondary h-[34px]  px-3.5  pb-1 rounded-[40px]"
         >
           Start a Campaign
