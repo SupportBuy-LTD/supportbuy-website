@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">SupportBuy social preview</title>
+  <desc id="desc">SupportBuy: Where Community Support Meets Verified Commerce</desc>
+  <rect width="1200" height="630" rx="32" fill="#071120"/>
+  <rect x="64" y="64" width="1072" height="502" rx="28" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+  <circle cx="296" cy="320" r="122" fill="#38bdf8" opacity="0.18"/>
+  <circle cx="862" cy="280" r="126" fill="#22c55e" opacity="0.2"/>
+  <rect x="170" y="216" width="260" height="180" rx="20" fill="#ffffff"/>
+  <rect x="208" y="252" width="186" height="22" rx="11" fill="#0f172a" opacity="0.9"/>
+  <rect x="208" y="292" width="138" height="16" rx="8" fill="#4b5563"/>
+  <rect x="208" y="324" width="110" height="16" rx="8" fill="#4b5563"/>
+  <rect x="208" y="358" width="162" height="18" rx="9" fill="#22c55e"/>
+  <rect x="540" y="218" width="332" height="182" rx="24" fill="#111827" stroke="#1f2937"/>
+  <path d="M618 334c24-54 72-84 128-84 44 0 86 20 112 54" stroke="#38bdf8" stroke-width="18" stroke-linecap="round" fill="none"/>
+  <circle cx="618" cy="314" r="24" fill="#38bdf8"/>
+  <circle cx="746" cy="250" r="20" fill="#22c55e"/>
+  <circle cx="816" cy="314" r="20" fill="#f59e0b"/>
+  <text x="110" y="470" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700">SupportBuy</text>
+  <text x="110" y="526" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="30">Where Community Support Meets Verified Commerce</text>
+</svg>
