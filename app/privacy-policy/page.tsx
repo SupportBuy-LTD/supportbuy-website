@@ -2,8 +2,8 @@ import React from "react";
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="bg-gray-50 min-h-screen py-12 px-6">
-      <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-8">
+    <main className="min-h-screen bg-sb-white-one px-4 py-12 md:px-8 lg:px-10">
+      <div className="mx-auto max-w-4xl rounded-lg bg-white p-8 shadow-sm">
         <h1 className="text-3xl font-bold text-gray-900 mb-6">
           Privacy Policy
         </h1>
