@@ -32,19 +32,19 @@ function PersonalHeader() {
             </span>
           </h1>
           <p className=" text-[20px] mt-6 text-sb-dark-one leading-[120%]">
-            SupportBuy makes it easy for
-            you to
-            <br className="lg:hidden block" />{" "}
-            raise funds for daily
+            SupportBuy lets your
+            community
+            <br className="lg:hidden" />{" "}
+            help pay your bills, fees
             <br className="hidden lg:block" />{" "}
-            needs, from{" "}
-            <br className="lg:hidden block" />{" "}
-            bills to shopping, with the
-            power of{" "}
-            <br className="lg:hidden block" />
-            your{" "}
-            <br className="hidden lg:block" />
-            community.
+            and needs
+            <br className="lg:hidden" />{" "}
+            directly — no cash
+            handovers, and
+            <br className="lg:hidden" />{" "}
+            no doubts
+            <br className="hidden lg:block" />{" "}
+            about how it was spent.{" "}
           </p>
           <div className="mt-[38px] space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full ">
             <ButtonLink
