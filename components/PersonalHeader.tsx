@@ -25,14 +25,12 @@ function PersonalHeader() {
       <header className="lg:flex lg:items-center justify-between gap-10 px-6 pt-32 pb-0 md:px-10 lg:pt-40 lg:pb-20 lg:px-20 bg-sb-white-one lg:h-[900px]">
         <div className="flex-1 max-w-[729px]">
           <h1 className="text-[48px] lg:text-[72px] text-sb-primary font-bold leading-[120%] tracking-[-3%]">
-            Get financial
-            <br /> support{" "}
+            Get support with
+            <br /> confidence. <br />
             <span className=" custom-header-light">
-              fast
+              Give with full trust.
             </span>
-            , transparent & social
           </h1>
-
           <p className=" text-[20px] mt-6 text-sb-dark-one leading-[120%]">
             SupportBuy makes it easy for
             you to

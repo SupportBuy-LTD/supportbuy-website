@@ -78,7 +78,6 @@ function BusinessHeader() {
               <MValueList />
             )}
           </div>
-
           <h1 className="text-[48px] lg:text-[72px] text-sb-white-two font-[700] leading-[110%] tracking-[-3%]">
             Unlock new
             <br /> sales channels
@@ -89,19 +88,23 @@ function BusinessHeader() {
           </h1>
           <p className=" text-base lg:text-[20px] mt-6 text-sb-white-two leading-[120%]">
             SupportBuy connects your
-            products and services
+            products and services with
             <br className="hidden lg:block" />{" "}
-            directly with customers who
-            get community-backed
-            funding.
+            customers who get
+            community-backed funding —
+            and you{" "}
+            <br className="hidden lg:block" />{" "}
+            get paid directly, every
+            time, the moment a campaign
+            is funded.
           </p>
+
           <div className="mt-10 space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full">
             <ButtonLink
               href="https://app.supportbuy.com/signup?u=BUSINESS&m=STANDARD"
               className="flex items-center justify-center hover:bg-[#ccf546f1] w-fit px-5 md:mt-2 rounded-[50px] bg-sb-secondary text-[17px] text-sb-primary h-[50px]"
             >
-              List Your
-              Products/Services
+              List Your Products
             </ButtonLink>
             <ButtonLink
               onClick={onOpen}

@@ -6,7 +6,7 @@ import {
 import { Link } from "@heroui/link";
 import { Analytics } from "@vercel/analytics/next";
 import clsx from "clsx";
-
+import Script from "next/script";
 import { Providers } from "./providers";
 
 import { siteConfig } from "@/config/site";
@@ -78,12 +78,6 @@ export default function RootLayout({
       suppressHydrationWarning
       lang="en"
     >
-      <GoogleTagManager
-        gtmId={
-          process.env
-            .NEXT_PUBLIC_GTM_ID!
-        }
-      />
       <head />
       <body
         className={clsx(
@@ -100,6 +94,7 @@ export default function RootLayout({
         </Providers>
         <Analytics />
       </body>
+      <GoogleTagManager gtmId="GTM-WLJLXMSZ" />
     </html>
   );
 }
