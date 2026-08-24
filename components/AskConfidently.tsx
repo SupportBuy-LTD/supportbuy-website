@@ -51,7 +51,9 @@ function AskConfidently() {
           <h2 className=" text-4xl  xl:text-[48px] text-sb-primary tracking-[-2%] leading-[120%] font-bold">
             It’s all about giving
             <br />
-            and support.
+            and receiving with
+            <br />
+            confidence.
           </h2>
           <p className=" mt-3 2xl:mt-4 2xl:text-xl font-normal text-sb-dark-one">
             Getting financial help for
