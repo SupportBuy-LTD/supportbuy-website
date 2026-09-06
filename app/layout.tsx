@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  manifest: "/manifest.json",
   alternates: {
     canonical: "/",
   },
@@ -50,6 +51,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+    apple: "/supportbuy_logo.png",
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Support Buy",
   },
 };
 
@@ -78,7 +85,12 @@ export default function RootLayout({
       suppressHydrationWarning
       lang="en"
     >
-      <head />
+      <head>
+        <Script
+          src="/pwa-global.js"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body
         className={clsx(
           fontSans.variable,
@@ -93,6 +105,10 @@ export default function RootLayout({
           {children}
         </Providers>
         <Analytics />
+        <Script
+          src="/register-sw.js"
+          strategy="afterInteractive"
+        />
       </body>
       <GoogleTagManager gtmId="GTM-WLJLXMSZ" />
     </html>

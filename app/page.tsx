@@ -2,15 +2,13 @@
 
 import AskConfidently from "@/components/AskConfidently";
 import PersonalHeader from "@/components/PersonalHeader";
-import DeskTopFooter from "@/components/shared/DeskTopFooter";
 import DesktopNavBar from "@/components/shared/DesktopNavBar";
-import MobileFooter from "@/components/shared/MobileFooter";
 import MobileNavBar from "@/components/shared/MobileNavBar";
 import SupportBuyEmpowers from "@/components/SupportBuyEmpowers";
 import FooterCTA from "@/components/FooterCTA";
 import GetSuppportSteps from "@/components/GetSuppportSteps/GetSuppportSteps";
-import useWindowSize from "@/hooks/useWindowSize";
 import ScrollReveal from "@/components/shared/ScrollReveal";
+import { FooterSwitch } from "@/components/FooterSwitch";
 import {
   AnimatePresence,
   motion,
@@ -19,12 +17,12 @@ import { usePathname } from "next/navigation";
 import PersonalUserFaq from "@/components/PersonalUserFaq";
 
 export default function Home() {
-  const { isMobile } = useWindowSize();
   const pathname = usePathname();
 
   return (
     <>
-      <MobileNavBar /> <DesktopNavBar />
+      <MobileNavBar />
+      <DesktopNavBar />
       <AnimatePresence mode="wait">
         <motion.div
           key={pathname} // this triggers animation when route changes
@@ -63,11 +61,7 @@ export default function Home() {
       <ScrollReveal>
         <FooterCTA />
       </ScrollReveal>
-      {isMobile ? (
-        <MobileFooter />
-      ) : (
-        <DeskTopFooter />
-      )}
+      <FooterSwitch />
     </>
   );
 }

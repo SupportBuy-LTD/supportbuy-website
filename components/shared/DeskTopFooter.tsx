@@ -3,6 +3,7 @@ import React from "react";
 import BrandIconFooter from "./BrandIconFooter";
 import { BRANDNAME } from "@/utils/constants";
 import Link from "next/link";
+import { InstallButtonWrapper } from "@/components/InstallButtonWrapper";
 
 function DeskTopFooter() {
   return (
@@ -15,7 +16,7 @@ function DeskTopFooter() {
             . All rights reserved.
           </p>
         </div>
-        <div className="flex gap-[34px]">
+        <div className="flex gap-[34px] items-center">
           <Link
             href="/privacy-policy"
             className="hover:text-sb-secondary"
@@ -34,6 +35,8 @@ function DeskTopFooter() {
           >
             Contact us
           </Link>
+
+          <InstallButtonWrapper />
         </div>
       </div>
     </footer>
