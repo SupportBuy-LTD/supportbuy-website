@@ -17,8 +17,8 @@
       "purpose": "any"
     }
   ],
-  "start_url": "https://app.supportbuy.com/signin",
-  "scope": "https://app.supportbuy.com/signin",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#144419",
