@@ -19,68 +19,59 @@ function PersonalHeader() {
     onOpen,
     onOpenChange,
   } = useDisclosure();
-
+  // pt-28 sm:pt-32 lg:pt-36 xl:pt-40
   return (
     <>
-      <header className="lg:flex lg:items-center justify-between gap-10 px-6 pt-32 pb-0 md:px-10 lg:pt-40 lg:pb-20 lg:px-20 bg-sb-white-one lg:h-[900px]">
-        <div className="flex-1 max-w-[729px]">
-          <h1 className="text-[48px] lg:text-[72px] text-sb-primary font-bold leading-[120%] tracking-[-3%]">
+      <header className="flex flex-col sm:flex-row sm:items-start justify-between gap-8 sm:gap-6 md:gap-8 lg:gap-14 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-24 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 lg:pb-16 bg-sb-white-one">
+        <div className="w-full sm:w-[50%] lg:w-[48%] xl:w-[50%] max-w-[720px] flex-shrink-0">
+          <h1 className="text-[36px] mt-10 lg:mt-20 min-[400px]:text-[42px] min-[480px]:text-[46px] sm:text-[44px] md:text-[54px] lg:text-[64px] xl:text-[76px] 2xl:text-[84px] text-sb-primary font-bold leading-[108%] tracking-[-3%]">
             Get support with
             <br /> confidence. <br />
-            <span className=" custom-header-light">
+            <span className="custom-header-light font-light">
               Give with full trust.
             </span>
           </h1>
-          <p className=" text-[20px] mt-6 text-sb-dark-one leading-[120%]">
-            SupportBuy lets your
-            community
-            <br className="lg:hidden" />{" "}
-            help pay your bills, fees
-            <br className="hidden lg:block" />{" "}
-            and needs
-            <br className="lg:hidden" />{" "}
-            directly — no cash
-            handovers, and
-            <br className="lg:hidden" />{" "}
-            no doubts
-            <br className="hidden lg:block" />{" "}
-            about how it was spent.{" "}
+          <p className="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] xl:text-[21px] mt-6 text-sb-dark-one leading-[135%] max-w-[580px]">
+            SupportBuy lets your community help pay your bills, fees, and needs directly — no cash handovers, and no doubts about how it was spent.
           </p>
-          <div className="mt-[38px] space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full ">
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 flex-wrap w-full sm:w-fit">
             <ButtonLink
               href="https://app.supportbuy.com/signup?u=CUSTOMER&m=STANDARD"
-              className="flex items-center justify-center hover:bg-[#144419ee] w-full md:w-fit px-5  rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary text-center h-[50px] md:mt-2"
+              className="flex items-center justify-center whitespace-nowrap shrink-0 hover:bg-[#144419ee] w-full sm:w-fit px-7 rounded-[50px] bg-sb-primary text-[16px] sm:text-[17px] text-sb-secondary text-center h-[52px]"
             >
               Get Started Free
             </ButtonLink>
             <Button
               onPress={onOpen}
-              href="#"
-              className="flex items-center justify-center hover:bg-[#ccf546f1] w-fit px-5  rounded-[50px] bg-sb-secondary cursor-pointer text-[17px] text-sb-primary h-[50px]"
+              className="flex items-center justify-center whitespace-nowrap shrink-0 hover:bg-[#ccf546f1] w-full sm:w-fit px-7 rounded-[50px] bg-sb-secondary cursor-pointer text-[16px] sm:text-[17px] text-sb-primary h-[52px]"
             >
-              <IconPlayerPlayFilled />{" "}
-              <span>
+              <IconPlayerPlayFilled size={18} className="shrink-0 mr-1" />{" "}
+              <span className="whitespace-nowrap">
                 See How It Works
               </span>
             </Button>
           </div>
         </div>
-        {/* Desktop Image Container */}
-        <div className="hidden lg:flex lg:mt-0 flex-1 relative xl:h-[600px] hero-image justify-end">
-          <img
-            src="/hero_image.png"
-            alt="Enjoyment"
-            className="w-full max-w-none h-auto object-contain object-right"
+        {/* Desktop / Tablet Image Container (600px+) */}
+        <div className="hidden sm:flex flex-1 relative justify-end items-start min-w-0">
+          <Image
+            src="/personal_hero_illustration.svg"
+            width={546}
+            height={788}
+            alt="SupportBuy Community"
+            className="w-full max-w-[480px] md:max-w-[540px] lg:max-w-[620px] xl:max-w-[700px] 2xl:max-w-[760px] h-auto object-contain object-right"
+            priority
           />
         </div>
-        {/* Mobile Image Container */}
-        <div className="lg:hidden mt-4 flex justify-center w-full">
+        {/* Mobile Image Container (< 600px) */}
+        <div className="sm:hidden mt-8 flex justify-center w-full">
           <Image
             src="/mobile_hero_illustration.svg"
-            width={345}
-            height={414}
-            alt="Enjoyment"
-            className="w-full max-w-[345px] h-auto mx-auto"
+            width={400}
+            height={480}
+            alt="SupportBuy Community"
+            className="w-full max-w-full h-auto mx-auto"
+            priority
           />
         </div>
       </header>
