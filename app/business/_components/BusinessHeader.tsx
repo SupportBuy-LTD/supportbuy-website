@@ -69,8 +69,8 @@ function BusinessHeader() {
   const { isMobile } = useWindowSize();
   return (
     <>
-      <header className=" gap-[52px] pt-[160px] xl:pt-[145px] lg:flex lg:items-start justify-between px-4 py-20 md:px-10 lg:p-20  ">
-        <div className=" flex-1/2">
+      <header className="flex flex-col sm:flex-row sm:items-start justify-between gap-8 sm:gap-6 md:gap-8 lg:gap-14 px-6 sm:px-10 md:px-14 lg:px-16 xl:px-24 pt-24 sm:pt-28 md:pt-32 lg:pt-36 pb-12 lg:pb-16 bg-sb-primary">
+        <div className="w-full sm:w-[50%] lg:w-[48%] xl:w-[50%] max-w-[720px] flex-shrink-0">
           <div className="mb-4">
             {!isMobile ? (
               <ValueList />
@@ -78,7 +78,7 @@ function BusinessHeader() {
               <MValueList />
             )}
           </div>
-          <h1 className="text-[48px] lg:text-[72px] text-sb-white-two font-[700] leading-[110%] tracking-[-3%]">
+          <h1 className="text-[36px] min-[400px]:text-[42px] min-[480px]:text-[46px] sm:text-[44px] md:text-[54px] lg:text-[64px] xl:text-[76px] 2xl:text-[84px] text-sb-white-two font-[700] leading-[108%] tracking-[-3%]">
             Unlock new
             <br /> sales channels
             <br />
@@ -86,59 +86,52 @@ function BusinessHeader() {
               effortlessly
             </span>
           </h1>
-          <p className=" text-base lg:text-[20px] mt-6 text-sb-white-two leading-[120%]">
-            SupportBuy connects your
-            products and services with
-            <br className="hidden lg:block" />{" "}
-            customers who get
-            community-backed funding —
-            and you{" "}
-            <br className="hidden lg:block" />{" "}
-            get paid directly, every
-            time, the moment a campaign
-            is funded.
+          <p className="text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] xl:text-[21px] mt-6 text-sb-white-two leading-[135%] max-w-[580px]">
+            SupportBuy connects your products and services with customers who get community-backed funding — and you get paid directly, every time, the moment a campaign is funded.
           </p>
 
-          <div className="mt-10 space-y-[7px] md:space-x-[7px] flex  flex-col md:flex-row md:items-center w-fit lg:w-full">
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 flex-wrap w-full sm:w-fit">
             <ButtonLink
               href="https://app.supportbuy.com/signup?u=BUSINESS&m=STANDARD"
-              className="flex items-center justify-center hover:bg-[#ccf546f1] w-fit px-5 md:mt-2 rounded-[50px] bg-sb-secondary text-[17px] text-sb-primary h-[50px]"
+              className="flex items-center justify-center whitespace-nowrap shrink-0 hover:bg-[#ccf546f1] w-full sm:w-fit px-7 rounded-[50px] bg-sb-secondary text-[16px] sm:text-[17px] text-sb-primary font-medium h-[52px]"
             >
               List Your Products
             </ButtonLink>
             <ButtonLink
               onClick={onOpen}
               href="#"
-              className="flex items-center justify-center hover:bg-[#144419ee] w-full md:w-fit px-5  rounded-[50px] bg-sb-primary text-[17px] text-sb-secondary text-center h-[50px] border border-sb-secondary"
+              className="flex items-center justify-center whitespace-nowrap shrink-0 hover:bg-[#144419ee] w-full sm:w-fit px-7 rounded-[50px] bg-sb-primary text-[16px] sm:text-[17px] text-sb-secondary text-center h-[52px] border border-sb-secondary"
             >
               See How It Works
             </ButtonLink>
           </div>
         </div>
-        <div className="lg:pt-[22px] md:mt-0 flex-1/2 xl:flex xl:justify-end  ">
-          <div className="hidden relative lg:block pr-[75px] lg:w-[621px]">
-            <div className="xl:w-[526px] xl:ml-10">
-              <Image
-                src="/peopleBuying-heroImage.png"
-                width={526}
-                height={359}
-                alt="Unlock new sales channels effortlessly"
-                className="hidden lg:block w-full"
-              />
-            </div>
-            <HeroAnimation />
-          </div>
-
-          <div className=" mt-[73px] mb-[108px] lg:hidden relative">
+        {/* Desktop / Tablet Image & Animations (600px+) */}
+        <div className="hidden sm:flex flex-1 relative justify-end min-w-0 pt-2 sm:pt-4">
+          <div className="relative w-full max-w-[440px] md:max-w-[500px] lg:max-w-[560px] xl:max-w-[620px]">
             <Image
-              src="/peopleBuying-image-mobile.png"
-              width={346}
-              height={247}
+              src="/peopleBuying-heroImage.png"
+              width={526}
+              height={359}
               alt="Unlock new sales channels effortlessly"
-              className="lg:hidden w-full"
+              className="w-full h-auto rounded-[16px]"
+              priority
             />
             <HeroAnimation />
           </div>
+        </div>
+
+        {/* Mobile Image & Animations (< 600px) */}
+        <div className="sm:hidden mt-8 mb-20 relative w-full max-w-full mx-auto">
+          <Image
+            src="/peopleBuying-image-mobile.png"
+            width={480}
+            height={340}
+            alt="Unlock new sales channels effortlessly"
+            className="w-full max-w-full h-auto rounded-[12px]"
+            priority
+          />
+          <HeroAnimation />
         </div>
       </header>
       <Modal
