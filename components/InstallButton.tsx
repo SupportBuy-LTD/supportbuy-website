@@ -13,8 +13,14 @@ export const InstallButton = () => {
   const [deferredPrompt, setDeferredPrompt] =
     useState<BeforeInstallPromptEvent | null>(null);
   const [isInstalled, setIsInstalled] = useState(false);
-
+  const [isSamsungBrowser, setIsSamsungBrowser] = useState(false);
   useEffect(() => {
+    // Check if user is using Samsung Internet browser
+    if (typeof window !== "undefined" && /SamsungBrowser/i.test(navigator.userAgent)) {
+      setIsSamsungBrowser(true);
+      return;
+    }
+
     // Check if already installed
     if (
       window.matchMedia("(display-mode: standalone)").matches ||
@@ -55,8 +61,8 @@ export const InstallButton = () => {
     setDeferredPrompt(null);
   };
 
-  // Don't render if already installed or no prompt available
-  if (isInstalled || !deferredPrompt) {
+  // Don't render if Samsung browser, already installed, or no prompt available
+  if (isSamsungBrowser || isInstalled || !deferredPrompt) {
     return null;
   }
 
