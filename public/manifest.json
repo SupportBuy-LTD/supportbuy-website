@@ -1,7 +1,7 @@
 {
   "id": "/",
-  "short_name": "Support Buy",
-  "name": "Support Buy",
+  "short_name": "SupportBuy",
+  "name": "SupportBuy",
   "description": "Get Financial Support for Bills, Fees & Daily Needs in Nigeria",
   "icons": [
     {
@@ -17,10 +17,22 @@
       "purpose": "any"
     }
   ],
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
   "orientation": "portrait",
   "theme_color": "#144419",
-  "background_color": "#144419"
+  "background_color": "#144419",
+  "prefer_related_applications": false,
+  "categories": [
+    "finance",
+    "shopping"
+  ],
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
 }

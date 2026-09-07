@@ -1,240 +1,86 @@
 "use client";
 
-import { useInstallPrompt } from "@/hooks/useInstallPrompt";
-import {
-  useState,
-  useEffect,
-} from "react";
-import { Button } from "@heroui/button";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  useDisclosure,
-} from "@heroui/modal";
-import { IconDownload } from "@tabler/icons-react";
+import { useEffect, useState } from "react";
+
+interface BeforeInstallPromptEvent extends Event {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{
+    outcome: "accepted" | "dismissed";
+  }>;
+}
 
 export const InstallButton = () => {
-  const {
-    installPrompt,
-    handleInstall,
-    isInstalled,
-  } = useInstallPrompt();
-  const {
-    isOpen,
-    onOpen,
-    onOpenChange,
-  } = useDisclosure();
-  const [isMobile, setIsMobile] =
-    useState(false);
-  const [isAndroid, setIsAndroid] =
-    useState(false);
-  const [isIOS, setIsIOS] =
-    useState(false);
-  const [isSafari, setIsSafari] =
-    useState(false);
+  const [deferredPrompt, setDeferredPrompt] =
+    useState<BeforeInstallPromptEvent | null>(null);
+  const [isInstalled, setIsInstalled] = useState(false);
 
   useEffect(() => {
-    const ua = navigator.userAgent;
+    // Check if already installed
+    if (
+      window.matchMedia("(display-mode: standalone)").matches ||
+      (window.navigator as any).standalone
+    ) {
+      setIsInstalled(true);
+      return;
+    }
 
-    // Check if Android
-    const isAndroidDevice =
-      /Android/i.test(ua);
-    setIsAndroid(isAndroidDevice);
+    const handler = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e as BeforeInstallPromptEvent);
+    };
 
-    // Check if Safari (iOS)
-    const isSafariDevice =
-      /Safari/.test(ua) &&
-      !/Chrome/.test(ua) &&
-      /iPhone|iPad|iPod/.test(ua);
-    const isIOSDevice =
-      /iPhone|iPad|iPod/.test(ua);
-    setIsSafari(isSafariDevice);
-    setIsIOS(isIOSDevice);
+    const installedHandler = () => {
+      setIsInstalled(true);
+      setDeferredPrompt(null);
+    };
 
-    // Check if mobile device
-    const isMobileDevice =
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        ua,
-      );
-    setIsMobile(isMobileDevice);
+    window.addEventListener("beforeinstallprompt", handler);
+    window.addEventListener("appinstalled", installedHandler);
+
+    return () => {
+      window.removeEventListener("beforeinstallprompt", handler);
+      window.removeEventListener("appinstalled", installedHandler);
+    };
   }, []);
 
-  // Hide if already installed
-  if (isInstalled) {
+  const handleInstall = async () => {
+    if (!deferredPrompt) return;
+
+    await deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+
+    if (outcome === "accepted") {
+      setIsInstalled(true);
+    }
+    setDeferredPrompt(null);
+  };
+
+  // Don't render if already installed or no prompt available
+  if (isInstalled || !deferredPrompt) {
     return null;
   }
 
-  // Show iOS instructions on Safari
-  if (isSafari && isIOS) {
-    return (
-      <>
-        <Button
-          onPress={onOpen}
-          startContent={
-            <IconDownload size={18} />
-          }
-          //   color="primary"
-          //   variant="solid"
-
-          size="sm"
-          className="text-xs bg-sb-secondary-300 hover:bg-sb-secondary-400 text-sb-primary"
-        >
-          Install App
-        </Button>
-
-        <Modal
-          isOpen={isOpen}
-          onOpenChange={onOpenChange}
-          size="md"
-        >
-          <ModalContent>
-            {(onClose) => (
-              <>
-                <ModalHeader className="flex flex-col gap-1">
-                  Install Support Buy on
-                  iOS
-                </ModalHeader>
-                <ModalBody>
-                  <div className="space-y-4">
-                    <p className="text-sm">
-                      Follow these steps
-                      to install Support
-                      Buy on your home
-                      screen:
-                    </p>
-                    <ol className="list-decimal list-inside space-y-3 text-sm">
-                      <li>
-                        Tap the{" "}
-                        <strong>
-                          Share
-                        </strong>{" "}
-                        button (arrow
-                        pointing up) at
-                        the bottom of
-                        Safari
-                      </li>
-                      <li>
-                        Scroll down and
-                        tap{" "}
-                        <strong>
-                          "Add to Home
-                          Screen"
-                        </strong>
-                      </li>
-                      <li>
-                        Confirm the app
-                        name and tap{" "}
-                        <strong>
-                          Add
-                        </strong>
-                      </li>
-                      <li>
-                        The app will now
-                        appear on your
-                        home screen like
-                        a native app!
-                      </li>
-                    </ol>
-                    <p className="text-xs text-gray-500 mt-4">
-                      Note: This app
-                      works offline and
-                      loads faster than
-                      using Safari.
-                    </p>
-                  </div>
-                </ModalBody>
-                <ModalFooter>
-                  <Button
-                    color="primary"
-                    onPress={onClose}
-                  >
-                    Got it!
-                  </Button>
-                </ModalFooter>
-              </>
-            )}
-          </ModalContent>
-        </Modal>
-      </>
-    );
-  }
-
-  // Use the native prompt when available; otherwise explain Chrome's manual path.
-  if (isAndroid && isMobile) {
-    return (
-      <>
-        <Button
-          onPress={
-            installPrompt
-              ? handleInstall
-              : onOpen
-          }
-          startContent={
-            <IconDownload size={18} />
-          }
-          //   color="primary"
-          //   variant="solid"
-          size="sm"
-          //   className="text-xs"
-          className="text-xs bg-sb-secondary-300 hover:bg-sb-secondary-400 text-sb-primary"
-        >
-          Install App
-        </Button>
-
-        <Modal
-          isOpen={isOpen}
-          onOpenChange={onOpenChange}
-          size="md"
-        >
-          <ModalContent>
-            {(onClose) => (
-              <>
-                <ModalHeader>
-                  Install Support Buy
-                </ModalHeader>
-                <ModalBody>
-                  <p className="text-sm">
-                    In Chrome, open the
-                    menu and choose
-                    <strong>
-                      {" "}
-                      Add to Home
-                      screen{" "}
-                    </strong>
-                    or{" "}
-                    <strong>
-                      Install app
-                    </strong>
-                    .
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    The automatic
-                    install prompt is
-                    unavailable on this
-                    development address.
-                    It will appear when
-                    the site uses HTTPS.
-                  </p>
-                </ModalBody>
-                <ModalFooter>
-                  <Button
-                    color="primary"
-                    onPress={onClose}
-                  >
-                    Got it!
-                  </Button>
-                </ModalFooter>
-              </>
-            )}
-          </ModalContent>
-        </Modal>
-      </>
-    );
-  }
-
-  // Don't show on other devices
-  return null;
+  return (
+    <button
+      onClick={handleInstall}
+      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-sb-secondary hover:bg-sb-secondary/90 rounded-lg transition-colors duration-200"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+        <polyline points="7 10 12 15 17 10" />
+        <line x1="12" y1="15" x2="12" y2="3" />
+      </svg>
+      Add to home screen
+    </button>
+  );
 };
